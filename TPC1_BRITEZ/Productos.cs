@@ -27,6 +27,7 @@ namespace TPC1_BRITEZ
             {
                 cmbProveedor.DataSource = provBusiness.getAll();
                 cmbProveedor.DisplayMember = "Nombre";
+                cmbProveedor.ValueMember = "ID"; 
                 var lista = business.getAll();
                 dataGridView1.DataSource = lista;
                 

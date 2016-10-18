@@ -44,8 +44,26 @@ namespace Services
         }
         public void Insert (EProveedor proveedor)
         {
+            try
+            {
+                var query = "INSERT INTO PROVEEDOR (NOMBRE,CUIT) VALUES (@pNOMBRE,@pCUIT)";
+                using (SqlConnection connection = new SqlConnection(Conn))
+                {
+                    connection.Open();
+                    using (SqlCommand comm = new SqlCommand(query, connection))
+                    {
+                        comm.Parameters.AddWithValue("@pNOMBRE", proveedor.Nombre);
+                        comm.Parameters.AddWithValue("@pCUIT", proveedor.Cuit);
+                        comm.ExecuteNonQuery();
 
-            
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

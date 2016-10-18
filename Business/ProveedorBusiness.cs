@@ -9,9 +9,11 @@ namespace Business
 {
     public class ProveedorBusiness
     {
+       private ProveedorService service = new ProveedorService();
+
         public List <EProveedor> getAll()
         {
-            var service = new ProveedorService();
+       
             try
             {
                 var Lista = service.getAll();
@@ -23,6 +25,19 @@ namespace Business
                 throw ex;
             }
             
+        }
+
+        public void Insert(EProveedor proveedor)
+        {
+            try
+            {
+                service.Insert(proveedor);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            } 
         }
     }
 }

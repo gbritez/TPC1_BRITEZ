@@ -13,6 +13,9 @@ namespace Services
     {
         string cnx = System.Configuration.ConfigurationManager.ConnectionStrings["Base"].ToString();
 
+
+
+
         public List<EProducto> getAll()
         {
             var lista = new List<EProducto>();           
@@ -47,5 +50,27 @@ namespace Services
             return lista;
         }
 
+
+        public void Insert ( EProducto producto, int id)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(cnx))
+                {
+                    connection.Open();
+                    var query = "";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
