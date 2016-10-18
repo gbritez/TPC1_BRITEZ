@@ -13,9 +13,6 @@ namespace Services
     {
         string cnx = System.Configuration.ConfigurationManager.ConnectionStrings["Base"].ToString();
 
-
-
-
         public List<EProducto> getAll()
         {
             var lista = new List<EProducto>();           
