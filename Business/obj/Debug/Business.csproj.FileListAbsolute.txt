@@ -1,0 +1,18 @@
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Business\bin\Debug\Business.dll
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Business\bin\Debug\Business.pdb
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Business\bin\Debug\Entities.dll
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Business\bin\Debug\Services.dll
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Business\bin\Debug\Entities.pdb
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Business\bin\Debug\Services.pdb
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Business\obj\Debug\Business.dll
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Business\obj\Debug\Business.pdb
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Business\bin\Debug\Business.dll
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Business\bin\Debug\Business.pdb
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Business\bin\Debug\Entities.dll
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Business\bin\Debug\Services.dll
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Business\bin\Debug\Entities.pdb
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Business\bin\Debug\Services.pdb
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Business\obj\Debug\Business.dll
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Business\obj\Debug\Business.pdb

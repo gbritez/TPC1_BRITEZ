@@ -1,0 +1,10 @@
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Entities\bin\Debug\Entities.dll
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Entities\bin\Debug\Entities.pdb
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Entities\obj\Debug\Entities.dll
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Entities\obj\Debug\Entities.pdb
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Entities\bin\Debug\Entities.dll
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Entities\bin\Debug\Entities.pdb
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Entities\obj\Debug\Entities.dll
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Entities\obj\Debug\Entities.pdb
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache

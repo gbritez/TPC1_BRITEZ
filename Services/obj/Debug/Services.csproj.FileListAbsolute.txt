@@ -1,0 +1,14 @@
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Services\bin\Debug\Services.dll
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Services\bin\Debug\Services.pdb
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Services\bin\Debug\Entities.dll
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Services\bin\Debug\Entities.pdb
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Services\obj\Debug\Services.dll
+c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\Services\obj\Debug\Services.pdb
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Services\bin\Debug\Services.dll
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Services\bin\Debug\Services.pdb
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Services\bin\Debug\Entities.dll
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Services\bin\Debug\Entities.pdb
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Services\obj\Debug\Services.dll
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Services\obj\Debug\Services.pdb
