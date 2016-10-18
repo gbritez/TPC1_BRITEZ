@@ -55,11 +55,16 @@ namespace Services
                 using (SqlConnection connection = new SqlConnection(cnx))
                 {
                     connection.Open();
-                    var query = "";
+                    var query = "INSERT INTO PRODUCTO (TIPO,MARCA,PRECIO,STOCK,STOCKMINIMO,IDPROVEEDOR) VALUES (@pTIPO,@pMARCA,@pPRECIO,@pSTOCK,@pSTOCKMINIMO,@pIDPROVEEDOR)";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
-
-
+                        cmd.Parameters.AddWithValue("@pTIPO",producto.tipo);
+                        cmd.Parameters.AddWithValue("@pMARCA", producto.marca);
+                        cmd.Parameters.AddWithValue("@pPRECIO", producto.precio);
+                        cmd.Parameters.AddWithValue("@pSTOCK", producto.stock);
+                        cmd.Parameters.AddWithValue("@pSTOCKMINIMO", producto.stockMinimo);
+                        cmd.Parameters.AddWithValue("@pIDPROVEEDOR", id);
+                        cmd.ExecuteNonQuery();
                     }
                 }
             }

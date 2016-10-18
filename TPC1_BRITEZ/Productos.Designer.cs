@@ -80,6 +80,10 @@
             this.metroTabPage2.Controls.SetChildIndex(this.metroLabel6, 0);
             this.metroTabPage2.Controls.SetChildIndex(this.cmbProveedor, 0);
             // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
             // txtTipo
             // 
             this.txtTipo.Location = new System.Drawing.Point(131, 39);
