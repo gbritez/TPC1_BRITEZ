@@ -46,9 +46,7 @@ namespace Services
             }
             return lista;
         }
-
-
-        public void Insert ( EProducto producto, int id)
+        public void Insert (EProducto producto, int id)
         {
             try
             {
@@ -73,6 +71,10 @@ namespace Services
 
                 throw ex;
             }
+        }
+        public void Update (EProducto producto, int id)
+        {
+
         }
     }
 }

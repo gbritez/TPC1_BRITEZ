@@ -11,7 +11,10 @@ namespace Entities
         private int _id;
         private string _nombre;
         private long _cuit;
+        private long _telefono;
+        private string _domicilio;
 
+        #region Propiedades
         public int ID
         {
             get
@@ -50,5 +53,29 @@ namespace Entities
             }
         }
 
+        public long Telefono
+        {
+            get
+            {
+                return _telefono;
+            }
+            set
+            {
+                _telefono = value;
+            }
+        }
+
+        public string Domicilio
+        {
+            get
+            {
+                return _domicilio;
+            }
+            set
+            {
+                _domicilio = value;
+            }
+        }
+        #endregion
     }
 }

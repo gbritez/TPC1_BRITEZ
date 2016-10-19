@@ -65,5 +65,10 @@ namespace Services
                 throw ex;
             }
         }
+        public void Update(EProveedor proveedor)
+        {
+
+        }
+       
     }
 }
