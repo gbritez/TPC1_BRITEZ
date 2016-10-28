@@ -21,5 +21,10 @@ namespace TPC1_BRITEZ
         {
            
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

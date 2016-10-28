@@ -27,6 +27,8 @@ namespace TPC1_BRITEZ
             {
                 proveedor.Nombre = txtNombre.Text;
                 proveedor.Cuit = Convert.ToInt64(txtCuit.Text);
+                proveedor.Telefono = Convert.ToInt64(txtTelefono.Text);
+                proveedor.Domicilio = txtDomicilio.Text;
                 business.Insert(proveedor);
                 MessageBox.Show("Proveedor ingresado con éxito.");
             }

@@ -16,7 +16,7 @@ namespace Services
         public List<EProducto> getAll()
         {
             var lista = new List<EProducto>();           
-            var query = "SELECT * FROM PRODUCTO";
+            var query = "GETPRODUCTOS";
             try
             {
                 using (var connection = new SqlConnection(cnx))                  
@@ -27,14 +27,15 @@ namespace Services
                         SqlDataReader reader = command.ExecuteReader();
                         while(reader.Read())
                         {
-                            var Producto = new EProducto();
+                           var Producto = new EProducto();
                             Producto.id = Convert.ToInt16(reader.GetValue(0));
                             Producto.tipo = reader.GetValue(2).ToString();
                             Producto.marca = reader.GetValue(1).ToString();
                             Producto.precio = Convert.ToDecimal(reader.GetValue(3));
+                            Producto.precioUnitario = Convert.ToDecimal(reader.GetValue(7));
                             Producto.stock = Convert.ToInt16(reader.GetValue(4));
                             Producto.stockMinimo = Convert.ToInt16(reader.GetValue(5));
-                            Producto.idProveedor = Convert.ToInt16(reader.GetValue(6));
+                           //Producto.idProveedor = Convert.ToInt16(reader.GetValue(6));
                             lista.Add(Producto);
                         }
                     }
@@ -53,10 +54,37 @@ namespace Services
                 using (SqlConnection connection = new SqlConnection(cnx))
                 {
                     connection.Open();
-                    var query = "INSERT INTO PRODUCTO (TIPO,MARCA,PRECIO,STOCK,STOCKMINIMO,IDPROVEEDOR) VALUES (@pTIPO,@pMARCA,@pPRECIO,@pSTOCK,@pSTOCKMINIMO,@pIDPROVEEDOR)";
+                    var query = "INSERT INTO PRODUCTO (TIPO,MARCA,PRECIO,STOCK,STOCKMINIMO,IDPROVEEDOR,PRECIO_UNITARIO) VALUES (@pTIPO,@pMARCA,@pPRECIO,@pSTOCK,@pSTOCKMINIMO,@pIDPROVEEDOR,@pPRECIO_UNITARIO)";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@pTIPO",producto.tipo);
+                        cmd.Parameters.AddWithValue("@pMARCA", producto.marca);
+                        cmd.Parameters.AddWithValue("@pPRECIO", producto.precio);
+                        cmd.Parameters.AddWithValue("@pSTOCK", producto.stock);
+                        cmd.Parameters.AddWithValue("@pSTOCKMINIMO", producto.stockMinimo);
+                        cmd.Parameters.AddWithValue("@pIDPROVEEDOR", id);
+                        cmd.Parameters.AddWithValue("@pPRECIO_UNITARIO", decimal.Multiply(producto.precio , Convert.ToDecimal(1.15)));
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void Update (EProducto producto, int id)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(cnx))
+                {
+                    connection.Open();
+                    var QUERY = "UPDATE PRODUCTO(TIPO,MARCA,PRECIO,STOCK,STOCKMINIMO,IDPROVEEDOR) VALUES (@pTIPO,@pMARCA,@pPRECIO,@pSTOCK,@pSTOCKMINIMO,@pIDPROVEEDOR)";
+                    using (SqlCommand cmd = new SqlCommand(QUERY, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@pTIPO", producto.tipo);
                         cmd.Parameters.AddWithValue("@pMARCA", producto.marca);
                         cmd.Parameters.AddWithValue("@pPRECIO", producto.precio);
                         cmd.Parameters.AddWithValue("@pSTOCK", producto.stock);
@@ -71,10 +99,6 @@ namespace Services
 
                 throw ex;
             }
-        }
-        public void Update (EProducto producto, int id)
-        {
-
         }
     }
 }

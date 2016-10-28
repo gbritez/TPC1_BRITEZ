@@ -53,7 +53,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(23, 58);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(665, 521);
+            this.metroTabControl1.Size = new System.Drawing.Size(754, 521);
             this.metroTabControl1.TabIndex = 0;
             // 
             // metroTabPage1
@@ -63,7 +63,7 @@
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(657, 482);
+            this.metroTabPage1.Size = new System.Drawing.Size(746, 482);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Listado";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -75,7 +75,7 @@
             this.groupBox1.Controls.Add(this.cmbFiltro);
             this.groupBox1.Location = new System.Drawing.Point(32, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(595, 53);
+            this.groupBox1.Size = new System.Drawing.Size(703, 53);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda Avanzada";
@@ -109,7 +109,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(32, 73);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(595, 401);
+            this.dataGridView1.Size = new System.Drawing.Size(703, 401);
             this.dataGridView1.TabIndex = 2;
             // 
             // metroTabPage2
@@ -153,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 625);
+            this.ClientSize = new System.Drawing.Size(796, 625);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.metroTabControl1);
             this.Name = "ABM";

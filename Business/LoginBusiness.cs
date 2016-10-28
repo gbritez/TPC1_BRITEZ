@@ -33,5 +33,21 @@ namespace Business
 
             return false;
         }
+
+        public List<EProducto> Buscar(string filtro, string busqueda)
+        {
+            var lista = new List<EProducto>();
+            try
+            {
+
+                return lista;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

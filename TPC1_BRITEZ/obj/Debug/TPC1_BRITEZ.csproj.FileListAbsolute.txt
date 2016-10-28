@@ -17,9 +17,16 @@ c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\TPC1_BRITEZ\bi
 c:\users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\TPC1_BRITEZ\bin\Debug\Services.pdb
 C:\Users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.MainMenu.resources
 C:\Users\yaravi\documents\visual studio 2015\Projects\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.Productos.resources
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.csprojResolveAssemblyReference.cache
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.ABM.resources
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.Clientes.resources
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.Login.resources
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.MainMenu.resources
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.Productos.resources
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.Properties.Resources.resources
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.Proveedores.resources
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.csproj.GenerateResource.Cache
 C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\bin\Debug\TPC1_BRITEZ.exe.config
-C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.exe
-C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.pdb
 C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\bin\Debug\TPC1_BRITEZ.exe
 C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\bin\Debug\TPC1_BRITEZ.pdb
 C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\bin\Debug\Business.dll
@@ -30,12 +37,5 @@ C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\bin\Debug\Services.dll
 C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\bin\Debug\Business.pdb
 C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\bin\Debug\Entities.pdb
 C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\bin\Debug\Services.pdb
-C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.csprojResolveAssemblyReference.cache
-C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.Login.resources
-C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.MainMenu.resources
-C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.Properties.Resources.resources
-C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.csproj.GenerateResource.Cache
-C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.ABM.resources
-C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.Proveedores.resources
-C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.Clientes.resources
-C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.Productos.resources
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.exe
+C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.pdb

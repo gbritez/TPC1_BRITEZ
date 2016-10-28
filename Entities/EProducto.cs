@@ -12,6 +12,7 @@ namespace Entities
         private string _tipo;
         private int _id;
         private decimal _precio;
+        private decimal _precioUnitario;
         private int _stock;
         private int _stockMinimo;
         private int _idProveedor;
@@ -62,6 +63,18 @@ namespace Entities
             set
             {
                 _precio = value;
+            }
+        }
+
+        public decimal precioUnitario
+        {
+            get
+            {
+                return _precioUnitario;
+            }
+            set
+            {
+                _precioUnitario = value;
             }
         }
 

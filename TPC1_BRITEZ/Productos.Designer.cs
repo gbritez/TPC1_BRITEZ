@@ -45,11 +45,20 @@
             this.groupBox1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // metroTabControl1
-            // 
-            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabPage1.Controls.SetChildIndex(this.groupBox1, 0);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(596, 19);
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(264, 19);
+            // 
+            // cmbFiltro
+            // 
+            this.cmbFiltro.Location = new System.Drawing.Point(27, 18);
             // 
             // metroTabPage2
             // 
@@ -186,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 625);
+            this.ClientSize = new System.Drawing.Size(791, 625);
             this.Name = "Productos";
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.Productos_Load);

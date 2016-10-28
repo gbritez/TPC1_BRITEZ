@@ -37,9 +37,9 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(116, 212);
+            this.btnEntrar.Location = new System.Drawing.Point(105, 226);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(75, 23);
+            this.btnEntrar.Size = new System.Drawing.Size(92, 38);
             this.btnEntrar.TabIndex = 0;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);

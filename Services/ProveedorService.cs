@@ -13,7 +13,7 @@ namespace Services
         public List<EProveedor> getAll()
         {
             var Lista = new List<EProveedor>();
-            var QUERY = "SELECT * FROM PROVEEDOR";
+            var QUERY = "GETPROVEEDORES";
             try
             {
                 using (SqlConnection connection = new SqlConnection(Conn))
@@ -46,7 +46,7 @@ namespace Services
         {
             try
             {
-                var query = "INSERT INTO PROVEEDOR (NOMBRE,CUIT) VALUES (@pNOMBRE,@pCUIT)";
+                var query = "INSERT INTO PROVEEDOR (NOMBRE,CUIT,TELEFONO,DOMICILIO) VALUES (@pNOMBRE,@pCUIT,@pTELEFONO,@pDOMICILIO)";
                 using (SqlConnection connection = new SqlConnection(Conn))
                 {
                     connection.Open();
@@ -54,6 +54,8 @@ namespace Services
                     {
                         comm.Parameters.AddWithValue("@pNOMBRE", proveedor.Nombre);
                         comm.Parameters.AddWithValue("@pCUIT", proveedor.Cuit);
+                        comm.Parameters.AddWithValue("@pTELEFONO", proveedor.Telefono);
+                        comm.Parameters.AddWithValue("@pDOMICILIO", proveedor.Domicilio);
                         comm.ExecuteNonQuery();
 
                     }

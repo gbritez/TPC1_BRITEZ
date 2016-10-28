@@ -30,6 +30,7 @@ namespace TPC1_BRITEZ
                 cmbProveedor.ValueMember = "ID"; 
                 var lista = business.getAll();
                 dataGridView1.DataSource = lista;
+                dataGridView1.Columns[7].Visible = false;
                 
             }
             catch (Exception ex)
@@ -52,6 +53,8 @@ namespace TPC1_BRITEZ
             try
             {
                 business.Insert(producto, (int)cmbProveedor.SelectedValue);
+                dataGridView1.DataSource = business.getAll();
+                
             }
             catch (Exception ex)
             {
@@ -59,6 +62,21 @@ namespace TPC1_BRITEZ
                 MessageBox.Show(ex.ToString());
             }
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var filter = cmbFiltro.SelectedText;
+            var busqueda = txtFiltro.Text;
+            try
+            {
+                
+            }
+            catch ( Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
