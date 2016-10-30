@@ -34,8 +34,8 @@ namespace Business
                 service.Insert(proveedor);
             }
             catch (Exception ex)
-            {
-
+            {                
+                
                 throw ex;
             } 
         }

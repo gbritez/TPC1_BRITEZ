@@ -57,7 +57,6 @@ namespace Services
                         comm.Parameters.AddWithValue("@pTELEFONO", proveedor.Telefono);
                         comm.Parameters.AddWithValue("@pDOMICILIO", proveedor.Domicilio);
                         comm.ExecuteNonQuery();
-
                     }
                 }
             }
