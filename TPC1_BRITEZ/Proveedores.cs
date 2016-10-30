@@ -19,12 +19,23 @@ namespace TPC1_BRITEZ
             InitializeComponent();
         }
 
+        private void cargarCombo()
+        {
+            cmbFiltro.Items.Add("NOMBRE");
+            cmbFiltro.Items.Add("CUIL");
+            cmbFiltro.Items.Add("DNI");
+            cmbFiltro.Items.Add("DOMICILIO");
+            cmbFiltro.Items.Add("TELEFONO");
+            cmbFiltro.SelectedIndex = 0;
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             var proveedor = new EProveedor();
             var business = new ProveedorBusiness();
             try
             {
+                cargarCombo();
                 proveedor.Nombre = txtNombre.Text;
                 proveedor.Cuit = Convert.ToInt64(txtCuit.Text);
                 proveedor.Telefono = Convert.ToInt64(txtTelefono.Text);

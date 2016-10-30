@@ -91,7 +91,17 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Size = new System.Drawing.Size(105, 34);
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Size = new System.Drawing.Size(94, 34);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(599, 581);
+            this.btnVolver.Size = new System.Drawing.Size(95, 34);
             // 
             // txtTipo
             // 
@@ -176,9 +186,9 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(331, 43);
+            this.metroLabel6.Location = new System.Drawing.Point(344, 39);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(75, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(74, 19);
             this.metroLabel6.TabIndex = 16;
             this.metroLabel6.Text = "Proveedor:";
             // 

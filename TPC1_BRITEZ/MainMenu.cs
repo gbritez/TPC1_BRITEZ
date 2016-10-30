@@ -49,5 +49,11 @@ namespace TPC1_BRITEZ
             var ClientesForm = new Clientes();
             ClientesForm.ShowDialog();
         }
+
+        private void btnCaja_Click(object sender, EventArgs e)
+        {
+            var CajaForm = new Caja();
+            CajaForm.ShowDialog();
+        }
     }
 }

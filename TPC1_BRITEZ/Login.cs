@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
+using MetroFramework.Forms;
 using Business;
 using Entities;
 
@@ -36,13 +38,14 @@ namespace TPC1_BRITEZ
                 }
                 else
                 {
-                    MessageBox.Show("Usuario o Contraseña incorrectos.");
+                    MetroMessageBox.Show(Owner, "Usuario y/o contraseña incorrecto(s).", "Error");
                 }
             }
+            
             catch (Exception ex)
             {
                 
-                MessageBox.Show(ex.ToString());
+                MetroMessageBox.Show(Owner,ex.Message,"Error");
             }
         }
     }

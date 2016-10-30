@@ -31,22 +31,23 @@
             this.btnProductos = new MetroFramework.Controls.MetroButton();
             this.btnProveedores = new MetroFramework.Controls.MetroButton();
             this.btnClientes = new MetroFramework.Controls.MetroButton();
-            this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
+            this.btnCaja = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // btnProductos
             // 
-            this.btnProductos.Location = new System.Drawing.Point(39, 107);
+            this.btnProductos.Location = new System.Drawing.Point(82, 102);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(128, 120);
             this.btnProductos.TabIndex = 0;
             this.btnProductos.Text = "PRODUCTOS";
+            this.btnProductos.UseWaitCursor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // btnProveedores
             // 
-            this.btnProveedores.Location = new System.Drawing.Point(162, 107);
+            this.btnProveedores.Location = new System.Drawing.Point(232, 102);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(128, 120);
             this.btnProveedores.TabIndex = 1;
@@ -55,37 +56,39 @@
             // 
             // btnClientes
             // 
-            this.btnClientes.Location = new System.Drawing.Point(286, 107);
+            this.btnClientes.Location = new System.Drawing.Point(13, 262);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(128, 120);
             this.btnClientes.TabIndex = 2;
             this.btnClientes.Text = "CLIENTES";
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
-            // metroButton4
-            // 
-            this.metroButton4.Location = new System.Drawing.Point(39, 233);
-            this.metroButton4.Name = "metroButton4";
-            this.metroButton4.Size = new System.Drawing.Size(128, 120);
-            this.metroButton4.TabIndex = 3;
-            this.metroButton4.Text = "CAJA";
-            // 
             // metroButton5
             // 
-            this.metroButton5.Location = new System.Drawing.Point(162, 233);
+            this.metroButton5.Location = new System.Drawing.Point(310, 262);
             this.metroButton5.Name = "metroButton5";
             this.metroButton5.Size = new System.Drawing.Size(128, 120);
             this.metroButton5.TabIndex = 4;
             this.metroButton5.Text = "SALIR";
             this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
+            // btnCaja
+            // 
+            this.btnCaja.Location = new System.Drawing.Point(163, 262);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Size = new System.Drawing.Size(128, 120);
+            this.btnCaja.TabIndex = 5;
+            this.btnCaja.Text = "CAJA";
+            this.btnCaja.UseWaitCursor = true;
+            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 429);
+            this.Controls.Add(this.btnCaja);
             this.Controls.Add(this.metroButton5);
-            this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnProductos);
@@ -102,8 +105,8 @@
         private MetroFramework.Controls.MetroButton btnProductos;
         private MetroFramework.Controls.MetroButton btnProveedores;
         private MetroFramework.Controls.MetroButton btnClientes;
-        private MetroFramework.Controls.MetroButton metroButton4;
         private MetroFramework.Controls.MetroButton metroButton5;
+        private MetroFramework.Controls.MetroButton btnCaja;
     }
 }
 

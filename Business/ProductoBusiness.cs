@@ -12,12 +12,12 @@ namespace Business
     {
         ProductoService productoService = new ProductoService();
 
-        public List<EProducto> getAll()
+        public List<EProducto> GetAll()
         {
             var lista = new List<EProducto>();
             try
             {                
-                lista = productoService.getAll();
+                lista = productoService.GetAll();
             }
             catch (Exception ex)
             {
@@ -27,11 +27,11 @@ namespace Business
             return lista;
         }
 
-        public void Insert(EProducto producto, int id)
+        public void Insert(EProducto producto)
         {
             try
             {
-                productoService.Insert(producto, id);
+                productoService.Insert(producto);
             }
             catch (Exception ex)
             {

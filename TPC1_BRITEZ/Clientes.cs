@@ -15,6 +15,15 @@ namespace TPC1_BRITEZ
     public partial class Clientes : ABM
     {
         private ClienteBusiness business = new ClienteBusiness();
+        private void cargarCombo()
+        {
+            cmbFiltro.Items.Add("NOMBRE");
+            cmbFiltro.Items.Add("CUIL");
+            cmbFiltro.Items.Add("DNI");
+            cmbFiltro.Items.Add("DOMICILIO");
+            cmbFiltro.Items.Add("TELEFONO");
+            cmbFiltro.SelectedIndex = 0;
+        }
         public Clientes()
         {
             InitializeComponent();
@@ -22,7 +31,7 @@ namespace TPC1_BRITEZ
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-           
+            cargarCombo();   
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

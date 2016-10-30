@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
+using MetroFramework.Forms;
 
 namespace TPC1_BRITEZ
 {
@@ -16,6 +18,16 @@ namespace TPC1_BRITEZ
     {
         private ProductoBusiness business = new ProductoBusiness();
         private ProveedorBusiness provBusiness = new ProveedorBusiness();
+        private void cargarCombo()
+        {
+            cmbFiltro.Items.Add("MARCA");
+            cmbFiltro.Items.Add("TIPO");
+            cmbFiltro.Items.Add("PRECIO");
+            cmbFiltro.Items.Add("STOCK");
+            cmbFiltro.Items.Add("PRECIO UNITARIO");
+            cmbFiltro.Items.Add("STOCK MINIMO");
+            cmbFiltro.SelectedIndex = 0;
+        }
         public Productos()
         {
             InitializeComponent();
@@ -25,10 +37,11 @@ namespace TPC1_BRITEZ
         {
             try
             {
+                cargarCombo();
                 cmbProveedor.DataSource = provBusiness.getAll();
                 cmbProveedor.DisplayMember = "Nombre";
                 cmbProveedor.ValueMember = "ID"; 
-                var lista = business.getAll();
+                var lista = business.GetAll();
                 dataGridView1.DataSource = lista;
                 dataGridView1.Columns[7].Visible = false;
                 
@@ -36,7 +49,7 @@ namespace TPC1_BRITEZ
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.ToString());
+                MetroMessageBox.Show(Owner, ex.Message, "Error");
             }
 
 
@@ -49,17 +62,18 @@ namespace TPC1_BRITEZ
             producto.marca = txtMarca.Text;
             producto.precio = Convert.ToDecimal(txtPrecio.Text);
             producto.stock = Convert.ToInt32(txtStock.Text);
-            producto.stockMinimo = Convert.ToInt32(txtStockMin.Text); 
+            producto.stockMinimo = Convert.ToInt32(txtStockMin.Text);
+            producto.idProveedor = (int)cmbProveedor.SelectedValue;
             try
             {
-                business.Insert(producto, (int)cmbProveedor.SelectedValue);
-                dataGridView1.DataSource = business.getAll();
+                business.Insert(producto);
+                dataGridView1.DataSource = business.GetAll();
                 
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.ToString());
+                MetroMessageBox.Show(Owner, ex.Message, "Error");
             }
 
         }
@@ -75,7 +89,7 @@ namespace TPC1_BRITEZ
             catch ( Exception ex)
             {
 
-                MessageBox.Show(ex.ToString());
+                MetroMessageBox.Show(Owner, ex.Message, "Error");
             }
         }
     }

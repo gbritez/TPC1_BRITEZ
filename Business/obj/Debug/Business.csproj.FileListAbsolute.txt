@@ -16,3 +16,12 @@ C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Business\bin\Debug\Services.pdb
 C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Business\obj\Debug\Business.dll
 C:\Users\gbritez\Desktop\UTN\TPC1_BRITEZ\Business\obj\Debug\Business.pdb
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\Business\bin\Debug\Business.dll
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\Business\bin\Debug\Business.pdb
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\Business\bin\Debug\Entities.dll
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\Business\bin\Debug\Services.dll
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\Business\bin\Debug\Entities.pdb
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\Business\bin\Debug\Services.pdb
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\Business\obj\Debug\Business.dll
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\Business\obj\Debug\Business.pdb

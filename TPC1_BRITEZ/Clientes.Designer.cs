@@ -33,11 +33,11 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
+            this.txtNombre = new MetroFramework.Controls.MetroTextBox();
+            this.txtCUIL = new MetroFramework.Controls.MetroTextBox();
+            this.txtDNI = new MetroFramework.Controls.MetroTextBox();
+            this.txtDomicilio = new MetroFramework.Controls.MetroTextBox();
+            this.txtTelefono = new MetroFramework.Controls.MetroTextBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -46,16 +46,16 @@
             // 
             // metroTabControl1
             // 
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabPage1.Controls.SetChildIndex(this.groupBox1, 0);
             // 
             // metroTabPage2
             // 
-            this.metroTabPage2.Controls.Add(this.metroTextBox5);
-            this.metroTabPage2.Controls.Add(this.metroTextBox4);
-            this.metroTabPage2.Controls.Add(this.metroTextBox3);
-            this.metroTabPage2.Controls.Add(this.metroTextBox2);
-            this.metroTabPage2.Controls.Add(this.metroTextBox1);
+            this.metroTabPage2.Controls.Add(this.txtTelefono);
+            this.metroTabPage2.Controls.Add(this.txtDomicilio);
+            this.metroTabPage2.Controls.Add(this.txtDNI);
+            this.metroTabPage2.Controls.Add(this.txtCUIL);
+            this.metroTabPage2.Controls.Add(this.txtNombre);
             this.metroTabPage2.Controls.Add(this.metroLabel5);
             this.metroTabPage2.Controls.Add(this.metroLabel4);
             this.metroTabPage2.Controls.Add(this.metroLabel3);
@@ -68,11 +68,11 @@
             this.metroTabPage2.Controls.SetChildIndex(this.metroLabel3, 0);
             this.metroTabPage2.Controls.SetChildIndex(this.metroLabel4, 0);
             this.metroTabPage2.Controls.SetChildIndex(this.metroLabel5, 0);
-            this.metroTabPage2.Controls.SetChildIndex(this.metroTextBox1, 0);
-            this.metroTabPage2.Controls.SetChildIndex(this.metroTextBox2, 0);
-            this.metroTabPage2.Controls.SetChildIndex(this.metroTextBox3, 0);
-            this.metroTabPage2.Controls.SetChildIndex(this.metroTextBox4, 0);
-            this.metroTabPage2.Controls.SetChildIndex(this.metroTextBox5, 0);
+            this.metroTabPage2.Controls.SetChildIndex(this.txtNombre, 0);
+            this.metroTabPage2.Controls.SetChildIndex(this.txtCUIL, 0);
+            this.metroTabPage2.Controls.SetChildIndex(this.txtDNI, 0);
+            this.metroTabPage2.Controls.SetChildIndex(this.txtDomicilio, 0);
+            this.metroTabPage2.Controls.SetChildIndex(this.txtTelefono, 0);
             // 
             // btnAceptar
             // 
@@ -83,85 +83,80 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(47, 44);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(81, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(62, 19);
             this.metroLabel1.TabIndex = 4;
-            this.metroLabel1.Text = "metroLabel1";
+            this.metroLabel1.Text = "Nombre:";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(45, 95);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(39, 19);
             this.metroLabel2.TabIndex = 5;
-            this.metroLabel2.Text = "metroLabel2";
+            this.metroLabel2.Text = "CUIL:";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(47, 147);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(34, 19);
             this.metroLabel3.TabIndex = 6;
-            this.metroLabel3.Text = "metroLabel3";
+            this.metroLabel3.Text = "DNI:";
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.Location = new System.Drawing.Point(47, 198);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(67, 19);
             this.metroLabel4.TabIndex = 7;
-            this.metroLabel4.Text = "metroLabel4";
+            this.metroLabel4.Text = "Domicilio:";
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.Location = new System.Drawing.Point(47, 250);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(63, 19);
             this.metroLabel5.TabIndex = 8;
-            this.metroLabel5.Text = "metroLabel5";
+            this.metroLabel5.Text = "Teléfono:";
             // 
-            // metroTextBox1
+            // txtNombre
             // 
-            this.metroTextBox1.Location = new System.Drawing.Point(205, 44);
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.Size = new System.Drawing.Size(75, 23);
-            this.metroTextBox1.TabIndex = 9;
-            this.metroTextBox1.Text = "metroTextBox1";
+            this.txtNombre.Location = new System.Drawing.Point(205, 44);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(216, 23);
+            this.txtNombre.TabIndex = 9;
             // 
-            // metroTextBox2
+            // txtCUIL
             // 
-            this.metroTextBox2.Location = new System.Drawing.Point(205, 95);
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.Size = new System.Drawing.Size(75, 23);
-            this.metroTextBox2.TabIndex = 10;
-            this.metroTextBox2.Text = "metroTextBox2";
+            this.txtCUIL.Location = new System.Drawing.Point(205, 95);
+            this.txtCUIL.Name = "txtCUIL";
+            this.txtCUIL.Size = new System.Drawing.Size(216, 23);
+            this.txtCUIL.TabIndex = 10;
             // 
-            // metroTextBox3
+            // txtDNI
             // 
-            this.metroTextBox3.Location = new System.Drawing.Point(205, 147);
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.Size = new System.Drawing.Size(75, 23);
-            this.metroTextBox3.TabIndex = 11;
-            this.metroTextBox3.Text = "metroTextBox3";
+            this.txtDNI.Location = new System.Drawing.Point(205, 147);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(216, 23);
+            this.txtDNI.TabIndex = 11;
             // 
-            // metroTextBox4
+            // txtDomicilio
             // 
-            this.metroTextBox4.Location = new System.Drawing.Point(205, 198);
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.Size = new System.Drawing.Size(75, 23);
-            this.metroTextBox4.TabIndex = 12;
-            this.metroTextBox4.Text = "metroTextBox4";
+            this.txtDomicilio.Location = new System.Drawing.Point(205, 198);
+            this.txtDomicilio.Name = "txtDomicilio";
+            this.txtDomicilio.Size = new System.Drawing.Size(216, 23);
+            this.txtDomicilio.TabIndex = 12;
             // 
-            // metroTextBox5
+            // txtTelefono
             // 
-            this.metroTextBox5.Location = new System.Drawing.Point(205, 250);
-            this.metroTextBox5.Name = "metroTextBox5";
-            this.metroTextBox5.Size = new System.Drawing.Size(75, 23);
-            this.metroTextBox5.TabIndex = 13;
-            this.metroTextBox5.Text = "metroTextBox5";
+            this.txtTelefono.Location = new System.Drawing.Point(205, 250);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(216, 23);
+            this.txtTelefono.TabIndex = 13;
             // 
             // Clientes
             // 
@@ -182,11 +177,11 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroTextBox metroTextBox5;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox txtTelefono;
+        private MetroFramework.Controls.MetroTextBox txtDomicilio;
+        private MetroFramework.Controls.MetroTextBox txtDNI;
+        private MetroFramework.Controls.MetroTextBox txtCUIL;
+        private MetroFramework.Controls.MetroTextBox txtNombre;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;

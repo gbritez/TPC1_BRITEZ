@@ -13,21 +13,83 @@ namespace Services
     {
         string cnx = System.Configuration.ConfigurationManager.ConnectionStrings["Base"].ToString();
 
-        public List<EProducto> getAll()
+        public bool CheckIfExists(int id)
         {
-            var lista = new List<EProducto>();           
+            var QUERY = "GETPRODUCTOS";
+            try
+            {
+                using (var connection = new SqlConnection(cnx))
+                {
+                    connection.Open();
+                    using (var cmd = new SqlCommand(QUERY, connection))
+                    {
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            if (Convert.ToInt16(reader.GetValue(0)) == id)
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return false;
+        }
+        private bool ValidateStock(int id, int cantidad)
+        {
+            var QUERY = "SELECT * FROM PRODUCTO WHERE ID = " + id.ToString();
+            try
+            {
+                using (var connection = new SqlConnection(cnx))
+                {
+                    connection.Open();
+                    using (var cmd = new SqlCommand(QUERY, connection))
+                    {
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while(reader.Read())
+                        {
+                            if(Convert.ToInt16(reader.GetValue(0)) == id)
+                            {
+                                var stockMin = Convert.ToInt16(reader.GetValue(5));
+                                var stock = Convert.ToInt16(reader.GetValue(4));
+                                if( stock - cantidad < stockMin)
+                                {
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return true;
+        }
+
+        public List<EProducto> GetAll()
+        {
+            var lista = new List<EProducto>();
             var query = "GETPRODUCTOS";
             try
             {
-                using (var connection = new SqlConnection(cnx))                  
+                using (var connection = new SqlConnection(cnx))
                 {
                     connection.Open();
                     using (var command = new SqlCommand(query, connection))
                     {
                         SqlDataReader reader = command.ExecuteReader();
-                        while(reader.Read())
+                        while (reader.Read())
                         {
-                           var Producto = new EProducto();
+                            var Producto = new EProducto();
                             Producto.id = Convert.ToInt16(reader.GetValue(0));
                             Producto.tipo = reader.GetValue(2).ToString();
                             Producto.marca = reader.GetValue(1).ToString();
@@ -35,7 +97,7 @@ namespace Services
                             Producto.precioUnitario = Convert.ToDecimal(reader.GetValue(7));
                             Producto.stock = Convert.ToInt16(reader.GetValue(4));
                             Producto.stockMinimo = Convert.ToInt16(reader.GetValue(5));
-                           //Producto.idProveedor = Convert.ToInt16(reader.GetValue(6));
+                            //Producto.idProveedor = Convert.ToInt16(reader.GetValue(6));
                             lista.Add(Producto);
                         }
                     }
@@ -47,7 +109,7 @@ namespace Services
             }
             return lista;
         }
-        public void Insert (EProducto producto, int id)
+        public void Insert(EProducto producto)
         {
             try
             {
@@ -57,13 +119,13 @@ namespace Services
                     var query = "INSERT INTO PRODUCTO (TIPO,MARCA,PRECIO,STOCK,STOCKMINIMO,IDPROVEEDOR,PRECIO_UNITARIO) VALUES (@pTIPO,@pMARCA,@pPRECIO,@pSTOCK,@pSTOCKMINIMO,@pIDPROVEEDOR,@pPRECIO_UNITARIO)";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
-                        cmd.Parameters.AddWithValue("@pTIPO",producto.tipo);
+                        cmd.Parameters.AddWithValue("@pTIPO", producto.tipo);
                         cmd.Parameters.AddWithValue("@pMARCA", producto.marca);
                         cmd.Parameters.AddWithValue("@pPRECIO", producto.precio);
                         cmd.Parameters.AddWithValue("@pSTOCK", producto.stock);
                         cmd.Parameters.AddWithValue("@pSTOCKMINIMO", producto.stockMinimo);
-                        cmd.Parameters.AddWithValue("@pIDPROVEEDOR", id);
-                        cmd.Parameters.AddWithValue("@pPRECIO_UNITARIO", decimal.Multiply(producto.precio , Convert.ToDecimal(1.15)));
+                        cmd.Parameters.AddWithValue("@pIDPROVEEDOR", producto.idProveedor);
+                        cmd.Parameters.AddWithValue("@pPRECIO_UNITARIO", decimal.Multiply(producto.precio, Convert.ToDecimal(1.15)));
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -74,7 +136,7 @@ namespace Services
                 throw ex;
             }
         }
-        public void Update (EProducto producto, int id)
+        public void Update(EProducto producto)
         {
             try
             {
@@ -89,7 +151,7 @@ namespace Services
                         cmd.Parameters.AddWithValue("@pPRECIO", producto.precio);
                         cmd.Parameters.AddWithValue("@pSTOCK", producto.stock);
                         cmd.Parameters.AddWithValue("@pSTOCKMINIMO", producto.stockMinimo);
-                        cmd.Parameters.AddWithValue("@pIDPROVEEDOR", id);
+                        cmd.Parameters.AddWithValue("@pIDPROVEEDOR", producto.idProveedor);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -99,6 +161,34 @@ namespace Services
 
                 throw ex;
             }
+        }
+        public void UpdateStock(int id, int cantidad, bool ban)
+        {          
+            var QUERY = "UPDATE PRODUCTO SET STOCK " + (ban ? "+" : "-") + "= " + cantidad.ToString() + " FROM PRODUCTO WHERE ID = " + id.ToString();
+            try
+            {
+                if (!ban)
+                {
+                    if (!ValidateStock(id, cantidad))
+                    {
+                        throw new Exception("La cantidad a vender supera el stock disponible.");
+                    }
+                }
+                using (var connection = new SqlConnection(cnx))
+                {
+                    connection.Open();
+                    using (var cmd = new SqlCommand(QUERY, connection))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+    
         }
     }
 }
