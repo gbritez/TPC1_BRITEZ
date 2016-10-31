@@ -12,7 +12,7 @@ namespace Services
     {
         string CONNECTION = System.Configuration.ConfigurationManager.ConnectionStrings["Base"].ToString();
 
-        public List<ECliente> getAll()
+        public List<ECliente> GetAll()
         {
             var lista = new List<ECliente>();
             try
@@ -23,10 +23,21 @@ namespace Services
                     cnx.Open();
                     using (SqlCommand cmd = new SqlCommand(QUERY, cnx))
                     {
-
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            var cliente = new ECliente();
+                            cliente.Id = Convert.ToInt16(reader.GetValue(0));
+                            cliente.Nombre = reader.GetValue(1).ToString();
+                            cliente.Cuil = Convert.ToInt64(reader.GetValue(2));
+                            cliente.Dni = Convert.ToInt64(reader.GetValue(3));
+                            cliente.Domicilio = reader.GetValue(4).ToString();
+                            cliente.Telefono = Convert.ToInt64(reader.GetValue(5));
+                            lista.Add(cliente);
+                        }
                     }
                 }
-                    return lista;
+                return lista;
             }
             catch (Exception ex)
             {
@@ -35,7 +46,7 @@ namespace Services
             }
         }
 
-        public void Insert ()
+        public void Insert()
         {
 
         }

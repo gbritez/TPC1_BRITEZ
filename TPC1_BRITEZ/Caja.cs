@@ -66,5 +66,10 @@ namespace TPC1_BRITEZ
                MetroMessageBox.Show(Owner,ex.Message,"Error");
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

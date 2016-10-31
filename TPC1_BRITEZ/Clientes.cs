@@ -31,7 +31,8 @@ namespace TPC1_BRITEZ
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            cargarCombo();   
+            cargarCombo();
+            dataGridView1.DataSource = business.GetAll();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

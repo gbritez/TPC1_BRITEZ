@@ -3,10 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Services;
+using Entities;
 
 namespace Business
 {
     public class ClienteBusiness
     {
+        private ClienteService service = new ClienteService();
+
+        public List<ECliente> GetAll()
+        {
+            try
+            {
+                return service.GetAll();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

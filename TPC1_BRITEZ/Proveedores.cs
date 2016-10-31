@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
+using MetroFramework.Forms;
 using Entities;
 using Business;
 
@@ -14,6 +16,7 @@ namespace TPC1_BRITEZ
 {
     public partial class Proveedores : ABM
     {
+        private ProveedorBusiness business = new ProveedorBusiness();
         public Proveedores()
         {
             InitializeComponent();
@@ -35,7 +38,7 @@ namespace TPC1_BRITEZ
             var business = new ProveedorBusiness();
             try
             {
-                cargarCombo();
+                
                 proveedor.Nombre = txtNombre.Text;
                 proveedor.Cuit = Convert.ToInt64(txtCuit.Text);
                 proveedor.Telefono = Convert.ToInt64(txtTelefono.Text);
@@ -46,8 +49,23 @@ namespace TPC1_BRITEZ
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.ToString());
+                MetroMessageBox.Show(Owner,ex.Message,"Error");
             }
+        }
+
+        private void Proveedores_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                cargarCombo();
+                dataGridView1.DataSource = business.getAll();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
     }
 }
