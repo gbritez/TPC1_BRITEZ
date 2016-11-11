@@ -25,3 +25,12 @@ C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\Business\bin\Debug\Services.pdb
 C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\Business\obj\Debug\Business.dll
 C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\Business\obj\Debug\Business.pdb
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Business\bin\Debug\Business.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Business\bin\Debug\Business.pdb
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Business\bin\Debug\Entities.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Business\bin\Debug\Services.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Business\bin\Debug\Entities.pdb
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Business\bin\Debug\Services.pdb
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Business\obj\Debug\Business.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Business\obj\Debug\Business.pdb

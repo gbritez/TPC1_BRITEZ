@@ -45,9 +45,18 @@ namespace TPC1_BRITEZ
 
         private void Caja_Load(object sender, EventArgs e)
         {
-            cmbProveedor.DataSource = provBusiness.getAll();
-            cmbProveedor.DisplayMember = "Nombre";
-            cmbProveedor.ValueMember = "ID";
+            try
+            {
+                cmbProveedor.DataSource = provBusiness.getAll();
+                cmbProveedor.DisplayMember = "Nombre";
+                cmbProveedor.ValueMember = "ID";
+                lblSaldo.Text = business.GetSaldo().ToString();
+            }
+            catch (Exception ex)
+            {
+                MetroMessageBox.Show(Owner,ex.Message,"Error");
+            }
+
         }
 
         private void btnAceptarVenta_Click(object sender, EventArgs e)
