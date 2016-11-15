@@ -87,3 +87,4 @@ C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.
 C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.Properties.Resources.resources
 C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.Proveedores.resources
 C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.csproj.GenerateResource.Cache
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TPC1_BRITEZ\obj\Debug\TPC1_BRITEZ.SetCaja.resources

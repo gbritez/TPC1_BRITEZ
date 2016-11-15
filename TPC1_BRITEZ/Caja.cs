@@ -18,6 +18,7 @@ namespace TPC1_BRITEZ
     {
         private CajaBusiness business = new CajaBusiness();
         private ProveedorBusiness provBusiness = new ProveedorBusiness();
+        private SetCaja setCaja = new SetCaja();
         public Caja()
         {
             InitializeComponent();
@@ -32,8 +33,9 @@ namespace TPC1_BRITEZ
                 producto.marca = txtMarca.Text;
                 producto.tipo = txtTipo.Text;
                 producto.stock = int.Parse(txtCantidad.Text);
+                producto.precio = Convert.ToDecimal(txtPrecio.Text);
                 producto.idProveedor = (int)cmbProveedor.SelectedValue;
-                business.Transaccion(producto, true);
+                business.Transaccion(producto, true, Convert.ToDecimal(lblSaldo.Text));
 
             }
             catch (Exception ex)
@@ -66,7 +68,7 @@ namespace TPC1_BRITEZ
                 var producto = new EProducto();
                 producto.id = int.Parse(txtIdProductoVenta.Text);
                 producto.stock = int.Parse(txtCantidadVenta.Text);
-                business.Transaccion(producto, false);
+                business.Transaccion(producto, false, Convert.ToDecimal(lblSaldo.Text));
 
             }
             catch (Exception ex)
@@ -79,6 +81,16 @@ namespace TPC1_BRITEZ
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        /// <summary>
+        /// Abro un form para fijar el importe inicial de la caja.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCaja_Click(object sender, EventArgs e)
+        {
+            setCaja.ShowDialog();
         }
     }
 }

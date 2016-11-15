@@ -8,9 +8,9 @@ namespace Entities
 {
     public class ECaja
     {
-        private float _sueldo;
+        private decimal _sueldo;
 
-        public float sueldo
+        public decimal sueldo
         {
             get
             {

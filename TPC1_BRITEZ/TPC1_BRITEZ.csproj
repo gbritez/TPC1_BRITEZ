@@ -106,6 +106,12 @@
     <Compile Include="Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="SetCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetCaja.Designer.cs">
+      <DependentUpon>SetCaja.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ABM.resx">
       <DependentUpon>ABM.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +141,9 @@
     </Compile>
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetCaja.resx">
+      <DependentUpon>SetCaja.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

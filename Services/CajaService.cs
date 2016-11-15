@@ -10,10 +10,10 @@ namespace Services
     public class CajaService
     {
         string connection = System.Configuration.ConfigurationManager.ConnectionStrings["Base"].ToString();
-        public float Get()
+        public decimal Get()
         {
             var query = "SELECT * FROM CAJA";
-            float res =0;
+            decimal res =0;
             try
             {
                 using (SqlConnection cnx = new SqlConnection(connection))
@@ -24,7 +24,7 @@ namespace Services
                         SqlDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                             res = (float)reader.GetValue(0);
+                             res = Convert.ToDecimal(reader.GetValue(0));
                         }
                     }                         
                 }
@@ -33,6 +33,27 @@ namespace Services
             
             catch(Exception ex)
             {
+                throw ex;
+            }
+        }
+
+        public void SetSaldo(decimal importe)
+        {
+            var QUERY = "DELETE FROM CAJA INSERT INTO CAJA VALUES( " + importe.ToString() + " )";
+            try
+            {
+                using (SqlConnection cnx = new SqlConnection(connection))
+                {
+                    cnx.Open();
+                    using (SqlCommand cmd = new SqlCommand(QUERY, cnx))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
                 throw ex;
             }
         }

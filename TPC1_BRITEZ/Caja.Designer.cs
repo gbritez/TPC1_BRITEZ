@@ -62,6 +62,7 @@
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.btnVolver = new MetroFramework.Controls.MetroButton();
             this.lblSaldo = new MetroFramework.Controls.MetroLabel();
+            this.btnCaja = new System.Windows.Forms.Button();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -579,7 +580,7 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(532, 30);
+            this.metroLabel7.Location = new System.Drawing.Point(500, 30);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(16, 19);
             this.metroLabel7.TabIndex = 8;
@@ -598,16 +599,27 @@
             // lblSaldo
             // 
             this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Location = new System.Drawing.Point(555, 29);
+            this.lblSaldo.Location = new System.Drawing.Point(522, 30);
             this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(0, 0);
+            this.lblSaldo.Size = new System.Drawing.Size(16, 19);
             this.lblSaldo.TabIndex = 10;
+            this.lblSaldo.Text = "0";
+            // 
+            // btnCaja
+            // 
+            this.btnCaja.Location = new System.Drawing.Point(394, 30);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Size = new System.Drawing.Size(75, 23);
+            this.btnCaja.TabIndex = 12;
+            this.btnCaja.UseVisualStyleBackColor = true;
+            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
             // 
             // Caja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 526);
+            this.Controls.Add(this.btnCaja);
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.metroLabel7);
@@ -667,5 +679,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private MetroFramework.Controls.MetroButton btnVolver;
         private MetroFramework.Controls.MetroLabel lblSaldo;
+        private System.Windows.Forms.Button btnCaja;
     }
 }
