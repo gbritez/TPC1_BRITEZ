@@ -16,6 +16,7 @@ namespace TPC1_BRITEZ
 {
     public partial class Login : MetroFramework.Forms.MetroForm
     {
+        private LoginBusiness loginBusiness = new LoginBusiness();
         public Login()
         {
             InitializeComponent();
@@ -23,22 +24,18 @@ namespace TPC1_BRITEZ
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            var LoginBusiness = new LoginBusiness();
+  
             var Usuario = new EUsuario();
             var menu = new MainMenu();
             Usuario.user = txtUser.Text.Trim();
             Usuario.password = txtPassword.Text.Trim();
             try
             {
-                if(LoginBusiness.Login(Usuario))
+                if(loginBusiness.Login(Usuario))
                 {
                     menu.Show();
                     this.Hide();
                     
-                }
-                else
-                {
-                    MetroMessageBox.Show(Owner, "Usuario y/o contraseña incorrecto(s).", "Error");
                 }
             }
             
