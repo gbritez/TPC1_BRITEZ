@@ -34,6 +34,7 @@ namespace TPC1_BRITEZ
                 producto.tipo = txtTipo.Text;
                 producto.stock = int.Parse(txtCantidad.Text);
                 producto.precio = Convert.ToDecimal(txtPrecio.Text);
+                producto.precioUnitario = Convert.ToDecimal(txtPrecio.Text);
                 producto.idProveedor = (int)cmbProveedor.SelectedValue;
                 business.Transaccion(producto, true, Convert.ToDecimal(lblSaldo.Text));
 
@@ -53,6 +54,8 @@ namespace TPC1_BRITEZ
                 cmbProveedor.DisplayMember = "Nombre";
                 cmbProveedor.ValueMember = "ID";
                 lblSaldo.Text = business.GetSaldo().ToString();
+                dataGridView1.DataSource = business.GetHistorico("COMPRA_HISTORICO");
+                dataGridView2.DataSource = business.GetHistorico("VENTA_HISTORICO");
             }
             catch (Exception ex)
             {
@@ -92,5 +95,7 @@ namespace TPC1_BRITEZ
         {
             setCaja.ShowDialog();
         }
+
+
     }
 }

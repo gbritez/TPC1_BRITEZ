@@ -74,7 +74,7 @@ namespace Entities
             }
             set
             {
-                _precioUnitario = value;
+                _precioUnitario = decimal.Multiply(value,Convert.ToDecimal(1.15));
             }
         }
 

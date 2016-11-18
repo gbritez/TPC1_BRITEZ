@@ -70,7 +70,22 @@ namespace Business
         {
             try
             {
-                cajaService.SetSaldo(importe);
+                cajaService.SetSaldoInicial(importe);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public List<EHistorico> GetHistorico (string tabla)
+        {
+
+            try
+            {
+                List<EHistorico> historico = cajaService.GetHistorico(tabla);
+                return historico;
             }
             catch (Exception ex)
             {
