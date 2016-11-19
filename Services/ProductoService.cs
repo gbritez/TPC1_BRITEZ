@@ -125,7 +125,7 @@ namespace Services
                         cmd.Parameters.AddWithValue("@pSTOCK", producto.stock);
                         cmd.Parameters.AddWithValue("@pSTOCKMINIMO", producto.stockMinimo);
                         cmd.Parameters.AddWithValue("@pIDPROVEEDOR", producto.idProveedor);
-                        cmd.Parameters.AddWithValue("@pPRECIO_UNITARIO", decimal.Multiply(producto.precio, Convert.ToDecimal(1.15)));
+                        cmd.Parameters.AddWithValue("@pPRECIO_UNITARIO", producto.precio);
                         cmd.ExecuteNonQuery();
                     }
                 }

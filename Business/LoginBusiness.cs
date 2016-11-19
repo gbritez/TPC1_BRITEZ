@@ -24,6 +24,10 @@ namespace Business
                 {
                     return true;    
                 }
+                else
+                {
+                    throw new Exception("Usuario o Contraseña inválido/s");
+                }
             }
             catch (Exception ex)
             {
@@ -31,7 +35,6 @@ namespace Business
                 throw ex;
             }
 
-            return false;
         }
 
         public List<EProducto> Buscar(string filtro, string busqueda)

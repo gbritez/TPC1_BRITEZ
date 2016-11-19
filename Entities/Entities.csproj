@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ECaja.cs" />
     <Compile Include="ECliente.cs" />
+    <Compile Include="EHistorico.cs" />
     <Compile Include="EProducto.cs" />
     <Compile Include="EProveedor.cs" />
     <Compile Include="EUsuario.cs" />

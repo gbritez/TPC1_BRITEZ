@@ -61,6 +61,7 @@ namespace TPC1_BRITEZ
             producto.tipo = txtTipo.Text;
             producto.marca = txtMarca.Text;
             producto.precio = Convert.ToDecimal(txtPrecio.Text);
+            producto.precioUnitario = Convert.ToDecimal(txtPrecio.Text);
             producto.stock = Convert.ToInt32(txtStock.Text);
             producto.stockMinimo = Convert.ToInt32(txtStockMin.Text);
             producto.idProveedor = (int)cmbProveedor.SelectedValue;
