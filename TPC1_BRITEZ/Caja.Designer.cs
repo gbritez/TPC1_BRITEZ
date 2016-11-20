@@ -298,7 +298,7 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.Location = new System.Drawing.Point(378, 96);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(75, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(74, 19);
             this.metroLabel6.TabIndex = 7;
             this.metroLabel6.Text = "Proveedor:";
             // 
@@ -526,7 +526,7 @@
             this.metroTabControl2.Controls.Add(this.metroTabPage5);
             this.metroTabControl2.Location = new System.Drawing.Point(13, 21);
             this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 0;
+            this.metroTabControl2.SelectedIndex = 1;
             this.metroTabControl2.Size = new System.Drawing.Size(611, 335);
             this.metroTabControl2.TabIndex = 2;
             this.metroTabControl2.UseSelectable = true;
@@ -553,7 +553,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(597, 278);
             this.dataGridView1.TabIndex = 2;
-
             // 
             // metroTabPage5
             // 
@@ -573,11 +572,10 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView2.Location = new System.Drawing.Point(3, 15);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(572, 261);
+            this.dataGridView2.Size = new System.Drawing.Size(597, 278);
             this.dataGridView2.TabIndex = 2;
-            
             // 
             // metroLabel7
             // 

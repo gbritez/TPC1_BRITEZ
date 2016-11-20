@@ -44,7 +44,7 @@ namespace TPC1_BRITEZ
                 proveedor.Telefono = Convert.ToInt64(txtTelefono.Text);
                 proveedor.Domicilio = txtDomicilio.Text;
                 business.Insert(proveedor);
-                MessageBox.Show("Proveedor ingresado con éxito.");
+                MetroMessageBox.Show(Owner,"Proveedor ingresado con éxito.");
             }
             catch (Exception ex)
             {

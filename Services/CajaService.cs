@@ -63,9 +63,9 @@ namespace Services
             }
         }
 
-        public void GrabarHistorico(EProducto producto, string tabla)
+        public void GrabarHistorico(EHistorico historico, string tabla)
         {
-            var QUERY = "INSERT INTO "+ tabla + "(NOPERACION,DESCRIPCION,CANTIDAD,PRECIO_UNITARIO,TOTAL,FECHA) VALUES (@pNOPERACION,@pDESCRIPCION,@pCANTIDAD,@pPRECIO_UNITARIO,@pTOTAL,@pFECHA)";
+            var QUERY = "INSERT INTO "+ tabla + "(DESCRIPCION,CANTIDAD,PRECIO_UNITARIO,TOTAL,FECHA) VALUES (@pDESCRIPCION,@pCANTIDAD,@pPRECIO_UNITARIO,@pTOTAL,@pFECHA)";
 
             try
             {
@@ -73,23 +73,13 @@ namespace Services
                 {
                     cnx.Open();
                     using (SqlCommand cmd = new SqlCommand(QUERY, cnx))
-                    {
-                        cmd.Parameters.AddWithValue("@pNOPERACION",1 ); //ESTA HARDCODEADO ESTO, FALTA FUNCIONALIDAD PARA GENERAR NUMERO UNICO
-                        cmd.Parameters.AddWithValue("@pDESCRIPCION", producto.tipo + " " + producto.marca);
-                        cmd.Parameters.AddWithValue("@pCANTIDAD", producto.stock);                       
-                        cmd.Parameters.AddWithValue("@pFECHA", DateTime.Now);
-                        //PRECIO PARA VENTAS
-                        if (tabla == "VENTA_HISTORICO")
-                        {
-                            cmd.Parameters.AddWithValue("@pPRECIO_UNITARIO", producto.precioUnitario);
-                            cmd.Parameters.AddWithValue("@pTOTAL", producto.precioUnitario * producto.stock );
-                        }
-                        //PRECIO PARA COMPRAS
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@pPRECIO_UNITARIO", producto.precio);
-                            cmd.Parameters.AddWithValue("@pTOTAL", producto.precio * producto.stock);
-                        }
+                    {                      
+                        cmd.Parameters.AddWithValue("@pDESCRIPCION", historico.descripcion);
+                        cmd.Parameters.AddWithValue("@pCANTIDAD", historico.cantidad);                       
+                        cmd.Parameters.AddWithValue("@pFECHA", historico.fecha);
+                        cmd.Parameters.AddWithValue("@pPRECIO_UNITARIO", historico.precio);
+                        cmd.Parameters.AddWithValue("@pTOTAL", historico.total );
+
                         cmd.ExecuteNonQuery();
                     }
                 }

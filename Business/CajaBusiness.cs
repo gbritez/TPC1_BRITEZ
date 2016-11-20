@@ -12,6 +12,7 @@ namespace Business
     {
         private ProductoService prodService = new ProductoService();
         private CajaService cajaService = new CajaService();
+        private EHistorico _historico = new EHistorico();
 
         /// <summary>
         /// El valor booleano representa si es una compra (true) o venta (false)
@@ -22,6 +23,8 @@ namespace Business
         {
             try
             {
+                FillHistorico(producto,ban);
+
                 //Si es una compra, valido tener saldo.
                 if (ban && producto.precio * producto.stock > saldo )
                 {
@@ -36,13 +39,24 @@ namespace Business
                 //Si es una compra checkeo si el producto ya existe y hago un Update
                 if (prodService.CheckIfExists(producto.id))
                 {
-                    prodService.UpdateStock(producto.id, producto.stock, ban);
-                }
+                    prodService.UpdateStock(producto.id, producto.stock, ban);    
+               }
                 //Caso contrario Inserto el nuevo producto.
                 else
                 {
-                    prodService.Insert(producto);
+                    prodService.Insert(producto);          
                 }
+
+                //Dependiendo si es compra o venta mando determinada tabla al historico
+                if(ban)
+                {
+                    cajaService.GrabarHistorico(_historico, "COMPRA_HISTORICO");
+                }
+                else
+                {
+                    cajaService.GrabarHistorico(_historico, "VENTA_HISTORICO");
+                }
+                    
             }
             catch (Exception ex)
             {
@@ -93,5 +107,24 @@ namespace Business
                 throw ex;
             }
         }
+
+        private void FillHistorico (EProducto producto, bool ban)
+        {
+            _historico.cantidad = producto.stock;
+            _historico.descripcion = producto.tipo + " " + producto.marca;
+            _historico.fecha = DateTime.Now; 
+            if (ban)
+            {
+                _historico.precio = producto.precio;
+
+            }
+            else
+            {
+                _historico.precio = producto.precioUnitario;
+            }
+            _historico.total = _historico.cantidad * _historico.precio;
+        }
+
+        
     }
 }
