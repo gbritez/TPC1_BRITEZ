@@ -70,6 +70,7 @@
             this.btnVolver = new MetroFramework.Controls.MetroButton();
             this.lblSaldo = new MetroFramework.Controls.MetroLabel();
             this.btnCaja = new System.Windows.Forms.Button();
+            this.Tooltip = new MetroFramework.Components.MetroToolTip();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -89,7 +90,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 72);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(674, 412);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
@@ -130,17 +131,20 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(46, 35);
             this.btnAceptar.TabIndex = 15;
+            this.Tooltip.SetToolTip(this.btnAceptar, "Aceptar");
             this.btnAceptar.UseSelectable = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnLimpiarCompra
             // 
+            this.btnLimpiarCompra.AccessibleName = "Limpiar";
             this.btnLimpiarCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiarCompra.BackgroundImage")));
             this.btnLimpiarCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpiarCompra.Location = new System.Drawing.Point(235, 298);
             this.btnLimpiarCompra.Name = "btnLimpiarCompra";
             this.btnLimpiarCompra.Size = new System.Drawing.Size(46, 35);
             this.btnLimpiarCompra.TabIndex = 14;
+            this.Tooltip.SetToolTip(this.btnLimpiarCompra, "Limpiar");
             this.btnLimpiarCompra.UseSelectable = true;
             this.btnLimpiarCompra.Click += new System.EventHandler(this.btnLimpiarCompra_Click);
             // 
@@ -309,7 +313,7 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.Location = new System.Drawing.Point(378, 96);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(74, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(75, 19);
             this.metroLabel6.TabIndex = 7;
             this.metroLabel6.Text = "Proveedor:";
             // 
@@ -388,6 +392,7 @@
             this.btnBuscarID.Name = "btnBuscarID";
             this.btnBuscarID.Size = new System.Drawing.Size(25, 23);
             this.btnBuscarID.TabIndex = 11;
+            this.Tooltip.SetToolTip(this.btnBuscarID, "Buscar");
             this.btnBuscarID.UseVisualStyleBackColor = true;
             this.btnBuscarID.Click += new System.EventHandler(this.btnBuscarID_Click);
             // 
@@ -594,6 +599,7 @@
             this.btnAceptarVenta.Name = "btnAceptarVenta";
             this.btnAceptarVenta.Size = new System.Drawing.Size(46, 35);
             this.btnAceptarVenta.TabIndex = 6;
+            this.Tooltip.SetToolTip(this.btnAceptarVenta, "Aceptar");
             this.btnAceptarVenta.UseSelectable = true;
             this.btnAceptarVenta.Click += new System.EventHandler(this.btnAceptarVenta_Click);
             // 
@@ -605,6 +611,7 @@
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(46, 35);
             this.metroButton3.TabIndex = 5;
+            this.Tooltip.SetToolTip(this.metroButton3, "Limpiar");
             this.metroButton3.UseSelectable = true;
             // 
             // metroLabel9
@@ -646,7 +653,7 @@
             this.metroTabControl2.Controls.Add(this.metroTabPage5);
             this.metroTabControl2.Location = new System.Drawing.Point(13, 3);
             this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 0;
+            this.metroTabControl2.SelectedIndex = 1;
             this.metroTabControl2.Size = new System.Drawing.Size(611, 353);
             this.metroTabControl2.TabIndex = 2;
             this.metroTabControl2.UseSelectable = true;
@@ -682,7 +689,7 @@
             this.metroTabPage5.HorizontalScrollbarSize = 10;
             this.metroTabPage5.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage5.Name = "metroTabPage5";
-            this.metroTabPage5.Size = new System.Drawing.Size(603, 293);
+            this.metroTabPage5.Size = new System.Drawing.Size(603, 311);
             this.metroTabPage5.TabIndex = 1;
             this.metroTabPage5.Text = "Salida";
             this.metroTabPage5.VerticalScrollbarBarColor = true;
@@ -714,6 +721,7 @@
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(46, 35);
             this.btnVolver.TabIndex = 9;
+            this.Tooltip.SetToolTip(this.btnVolver, "Volver");
             this.btnVolver.UseSelectable = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
@@ -734,8 +742,15 @@
             this.btnCaja.Name = "btnCaja";
             this.btnCaja.Size = new System.Drawing.Size(32, 23);
             this.btnCaja.TabIndex = 12;
+            this.Tooltip.SetToolTip(this.btnCaja, "Abrir Caja");
             this.btnCaja.UseVisualStyleBackColor = true;
             this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
+            // 
+            // Tooltip
+            // 
+            this.Tooltip.Style = MetroFramework.MetroColorStyle.Blue;
+            this.Tooltip.StyleManager = null;
+            this.Tooltip.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // Caja
             // 
@@ -811,5 +826,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private System.Windows.Forms.Button btnBuscarID;
+        private MetroFramework.Components.MetroToolTip Tooltip;
     }
 }
