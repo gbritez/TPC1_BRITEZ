@@ -21,6 +21,7 @@ namespace TPC1_BRITEZ
         private ProductoBusiness prodBusiness = new ProductoBusiness();
         private SetCaja setCaja = new SetCaja();
         private EProducto productoVenta = new EProducto();
+
         public Caja()
         {
             InitializeComponent();
@@ -112,6 +113,11 @@ namespace TPC1_BRITEZ
 
                 MetroMessageBox.Show(Owner, ex.Message);
             }
+
+        }
+
+        private void btnLimpiarCompra_Click(object sender, EventArgs e)
+        {
 
         }
     }

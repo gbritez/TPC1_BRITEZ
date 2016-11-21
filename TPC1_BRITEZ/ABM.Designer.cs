@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABM));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -87,11 +88,12 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(460, 24);
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Location = new System.Drawing.Point(634, 19);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(30, 23);
             this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseSelectable = true;
             // 
             // txtFiltro
@@ -161,29 +163,32 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(368, 434);
+            this.btnAceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceptar.BackgroundImage")));
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceptar.Location = new System.Drawing.Point(434, 434);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(46, 35);
             this.btnAceptar.TabIndex = 3;
-            this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseSelectable = true;
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(167, 434);
+            this.btnLimpiar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.BackgroundImage")));
+            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpiar.Location = new System.Drawing.Point(280, 434);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.Size = new System.Drawing.Size(46, 35);
             this.btnLimpiar.TabIndex = 2;
-            this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseSelectable = true;
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(599, 585);
+            this.btnVolver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolver.BackgroundImage")));
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVolver.Location = new System.Drawing.Point(716, 585);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 30);
+            this.btnVolver.Size = new System.Drawing.Size(46, 35);
             this.btnVolver.TabIndex = 1;
-            this.btnVolver.Text = "Volver";
             this.btnVolver.UseSelectable = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 

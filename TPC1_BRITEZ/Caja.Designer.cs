@@ -32,7 +32,7 @@
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.btnAceptar = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnLimpiarCompra = new MetroFramework.Controls.MetroButton();
             this.cmbProveedor = new MetroFramework.Controls.MetroComboBox();
             this.txtCantidad = new MetroFramework.Controls.MetroTextBox();
             this.txtPrecio = new MetroFramework.Controls.MetroTextBox();
@@ -89,7 +89,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 72);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(674, 412);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
@@ -97,7 +97,7 @@
             // metroTabPage1
             // 
             this.metroTabPage1.Controls.Add(this.btnAceptar);
-            this.metroTabPage1.Controls.Add(this.metroButton1);
+            this.metroTabPage1.Controls.Add(this.btnLimpiarCompra);
             this.metroTabPage1.Controls.Add(this.cmbProveedor);
             this.metroTabPage1.Controls.Add(this.txtCantidad);
             this.metroTabPage1.Controls.Add(this.txtPrecio);
@@ -124,22 +124,25 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceptar.BackgroundImage")));
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAceptar.Location = new System.Drawing.Point(377, 298);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 35);
+            this.btnAceptar.Size = new System.Drawing.Size(46, 35);
             this.btnAceptar.TabIndex = 15;
-            this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseSelectable = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // metroButton1
+            // btnLimpiarCompra
             // 
-            this.metroButton1.Location = new System.Drawing.Point(235, 298);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(75, 35);
-            this.metroButton1.TabIndex = 14;
-            this.metroButton1.Text = "Limpiar";
-            this.metroButton1.UseSelectable = true;
+            this.btnLimpiarCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiarCompra.BackgroundImage")));
+            this.btnLimpiarCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpiarCompra.Location = new System.Drawing.Point(235, 298);
+            this.btnLimpiarCompra.Name = "btnLimpiarCompra";
+            this.btnLimpiarCompra.Size = new System.Drawing.Size(46, 35);
+            this.btnLimpiarCompra.TabIndex = 14;
+            this.btnLimpiarCompra.UseSelectable = true;
+            this.btnLimpiarCompra.Click += new System.EventHandler(this.btnLimpiarCompra_Click);
             // 
             // cmbProveedor
             // 
@@ -585,21 +588,23 @@
             // 
             // btnAceptarVenta
             // 
+            this.btnAceptarVenta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceptarVenta.BackgroundImage")));
+            this.btnAceptarVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAceptarVenta.Location = new System.Drawing.Point(344, 317);
             this.btnAceptarVenta.Name = "btnAceptarVenta";
-            this.btnAceptarVenta.Size = new System.Drawing.Size(75, 35);
+            this.btnAceptarVenta.Size = new System.Drawing.Size(46, 35);
             this.btnAceptarVenta.TabIndex = 6;
-            this.btnAceptarVenta.Text = "Aceptar";
             this.btnAceptarVenta.UseSelectable = true;
             this.btnAceptarVenta.Click += new System.EventHandler(this.btnAceptarVenta_Click);
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(199, 317);
+            this.metroButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroButton3.BackgroundImage")));
+            this.metroButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroButton3.Location = new System.Drawing.Point(228, 317);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(75, 35);
+            this.metroButton3.Size = new System.Drawing.Size(46, 35);
             this.metroButton3.TabIndex = 5;
-            this.metroButton3.Text = "Limpiar";
             this.metroButton3.UseSelectable = true;
             // 
             // metroLabel9
@@ -703,11 +708,12 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(596, 486);
+            this.btnVolver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolver.BackgroundImage")));
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVolver.Location = new System.Drawing.Point(681, 486);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(87, 34);
+            this.btnVolver.Size = new System.Drawing.Size(46, 35);
             this.btnVolver.TabIndex = 9;
-            this.btnVolver.Text = "Volver";
             this.btnVolver.UseSelectable = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
@@ -777,7 +783,7 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage4;
         private MetroFramework.Controls.MetroTabPage metroTabPage5;
         private MetroFramework.Controls.MetroButton btnAceptar;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnLimpiarCompra;
         private MetroFramework.Controls.MetroComboBox cmbProveedor;
         private MetroFramework.Controls.MetroTextBox txtCantidad;
         private MetroFramework.Controls.MetroTextBox txtPrecio;
