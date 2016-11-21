@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Caja));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.btnAceptar = new MetroFramework.Controls.MetroButton();
@@ -45,12 +46,18 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTextBox8 = new MetroFramework.Controls.MetroTextBox();
+            this.btnBuscarID = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDescripcion = new MetroFramework.Controls.MetroTextBox();
+            this.txtPrecioVenta = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.txtDisponible = new MetroFramework.Controls.MetroTextBox();
             this.txtCantidadVenta = new MetroFramework.Controls.MetroTextBox();
             this.txtIdProductoVenta = new MetroFramework.Controls.MetroTextBox();
             this.btnAceptarVenta = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
@@ -66,6 +73,7 @@
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             this.metroTabControl2.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
@@ -81,7 +89,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 72);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(674, 412);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
@@ -349,12 +357,12 @@
             // 
             // metroTabPage2
             // 
-            this.metroTabPage2.Controls.Add(this.metroTextBox8);
+            this.metroTabPage2.Controls.Add(this.btnBuscarID);
+            this.metroTabPage2.Controls.Add(this.groupBox1);
             this.metroTabPage2.Controls.Add(this.txtCantidadVenta);
             this.metroTabPage2.Controls.Add(this.txtIdProductoVenta);
             this.metroTabPage2.Controls.Add(this.btnAceptarVenta);
             this.metroTabPage2.Controls.Add(this.metroButton3);
-            this.metroTabPage2.Controls.Add(this.metroLabel10);
             this.metroTabPage2.Controls.Add(this.metroLabel9);
             this.metroTabPage2.Controls.Add(this.metroLabel8);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
@@ -369,35 +377,151 @@
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
-            // metroTextBox8
+            // btnBuscarID
+            // 
+            this.btnBuscarID.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscarID.BackgroundImage")));
+            this.btnBuscarID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarID.Location = new System.Drawing.Point(217, 20);
+            this.btnBuscarID.Name = "btnBuscarID";
+            this.btnBuscarID.Size = new System.Drawing.Size(25, 23);
+            this.btnBuscarID.TabIndex = 11;
+            this.btnBuscarID.UseVisualStyleBackColor = true;
+            this.btnBuscarID.Click += new System.EventHandler(this.btnBuscarID_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtDescripcion);
+            this.groupBox1.Controls.Add(this.txtPrecioVenta);
+            this.groupBox1.Controls.Add(this.metroLabel12);
+            this.groupBox1.Controls.Add(this.metroLabel11);
+            this.groupBox1.Controls.Add(this.metroLabel10);
+            this.groupBox1.Controls.Add(this.txtDisponible);
+            this.groupBox1.Location = new System.Drawing.Point(3, 54);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(606, 180);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Resultado";
+            // 
+            // txtDescripcion
             // 
             // 
             // 
             // 
-            this.metroTextBox8.CustomButton.Image = null;
-            this.metroTextBox8.CustomButton.Location = new System.Drawing.Point(159, 1);
-            this.metroTextBox8.CustomButton.Name = "";
-            this.metroTextBox8.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox8.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox8.CustomButton.TabIndex = 1;
-            this.metroTextBox8.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox8.CustomButton.UseSelectable = true;
-            this.metroTextBox8.CustomButton.Visible = false;
-            this.metroTextBox8.Lines = new string[0];
-            this.metroTextBox8.Location = new System.Drawing.Point(201, 188);
-            this.metroTextBox8.MaxLength = 32767;
-            this.metroTextBox8.Name = "metroTextBox8";
-            this.metroTextBox8.PasswordChar = '\0';
-            this.metroTextBox8.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox8.SelectedText = "";
-            this.metroTextBox8.SelectionLength = 0;
-            this.metroTextBox8.SelectionStart = 0;
-            this.metroTextBox8.ShortcutsEnabled = true;
-            this.metroTextBox8.Size = new System.Drawing.Size(181, 23);
-            this.metroTextBox8.TabIndex = 9;
-            this.metroTextBox8.UseSelectable = true;
-            this.metroTextBox8.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox8.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDescripcion.CustomButton.Image = null;
+            this.txtDescripcion.CustomButton.Location = new System.Drawing.Point(159, 1);
+            this.txtDescripcion.CustomButton.Name = "";
+            this.txtDescripcion.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDescripcion.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDescripcion.CustomButton.TabIndex = 1;
+            this.txtDescripcion.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDescripcion.CustomButton.UseSelectable = true;
+            this.txtDescripcion.CustomButton.Visible = false;
+            this.txtDescripcion.Lines = new string[0];
+            this.txtDescripcion.Location = new System.Drawing.Point(131, 16);
+            this.txtDescripcion.MaxLength = 32767;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.PasswordChar = '\0';
+            this.txtDescripcion.ReadOnly = true;
+            this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDescripcion.SelectedText = "";
+            this.txtDescripcion.SelectionLength = 0;
+            this.txtDescripcion.SelectionStart = 0;
+            this.txtDescripcion.ShortcutsEnabled = true;
+            this.txtDescripcion.Size = new System.Drawing.Size(181, 23);
+            this.txtDescripcion.TabIndex = 13;
+            this.txtDescripcion.UseSelectable = true;
+            this.txtDescripcion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDescripcion.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtPrecioVenta
+            // 
+            // 
+            // 
+            // 
+            this.txtPrecioVenta.CustomButton.Image = null;
+            this.txtPrecioVenta.CustomButton.Location = new System.Drawing.Point(159, 1);
+            this.txtPrecioVenta.CustomButton.Name = "";
+            this.txtPrecioVenta.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPrecioVenta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPrecioVenta.CustomButton.TabIndex = 1;
+            this.txtPrecioVenta.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPrecioVenta.CustomButton.UseSelectable = true;
+            this.txtPrecioVenta.CustomButton.Visible = false;
+            this.txtPrecioVenta.Lines = new string[0];
+            this.txtPrecioVenta.Location = new System.Drawing.Point(131, 66);
+            this.txtPrecioVenta.MaxLength = 32767;
+            this.txtPrecioVenta.Name = "txtPrecioVenta";
+            this.txtPrecioVenta.PasswordChar = '\0';
+            this.txtPrecioVenta.ReadOnly = true;
+            this.txtPrecioVenta.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPrecioVenta.SelectedText = "";
+            this.txtPrecioVenta.SelectionLength = 0;
+            this.txtPrecioVenta.SelectionStart = 0;
+            this.txtPrecioVenta.ShortcutsEnabled = true;
+            this.txtPrecioVenta.Size = new System.Drawing.Size(181, 23);
+            this.txtPrecioVenta.TabIndex = 12;
+            this.txtPrecioVenta.UseSelectable = true;
+            this.txtPrecioVenta.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPrecioVenta.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.Location = new System.Drawing.Point(7, 66);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(46, 19);
+            this.metroLabel12.TabIndex = 11;
+            this.metroLabel12.Text = "Precio";
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.Location = new System.Drawing.Point(7, 20);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(76, 19);
+            this.metroLabel11.TabIndex = 10;
+            this.metroLabel11.Text = "Descripción";
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.Location = new System.Drawing.Point(7, 107);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(108, 19);
+            this.metroLabel10.TabIndex = 4;
+            this.metroLabel10.Text = "Stock Disponible:";
+            // 
+            // txtDisponible
+            // 
+            // 
+            // 
+            // 
+            this.txtDisponible.CustomButton.Image = null;
+            this.txtDisponible.CustomButton.Location = new System.Drawing.Point(159, 1);
+            this.txtDisponible.CustomButton.Name = "";
+            this.txtDisponible.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDisponible.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDisponible.CustomButton.TabIndex = 1;
+            this.txtDisponible.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDisponible.CustomButton.UseSelectable = true;
+            this.txtDisponible.CustomButton.Visible = false;
+            this.txtDisponible.Lines = new string[0];
+            this.txtDisponible.Location = new System.Drawing.Point(131, 107);
+            this.txtDisponible.MaxLength = 32767;
+            this.txtDisponible.Name = "txtDisponible";
+            this.txtDisponible.PasswordChar = '\0';
+            this.txtDisponible.ReadOnly = true;
+            this.txtDisponible.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDisponible.SelectedText = "";
+            this.txtDisponible.SelectionLength = 0;
+            this.txtDisponible.SelectionStart = 0;
+            this.txtDisponible.ShortcutsEnabled = true;
+            this.txtDisponible.Size = new System.Drawing.Size(181, 23);
+            this.txtDisponible.TabIndex = 9;
+            this.txtDisponible.UseSelectable = true;
+            this.txtDisponible.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDisponible.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtCantidadVenta
             // 
@@ -405,7 +529,7 @@
             // 
             // 
             this.txtCantidadVenta.CustomButton.Image = null;
-            this.txtCantidadVenta.CustomButton.Location = new System.Drawing.Point(159, 1);
+            this.txtCantidadVenta.CustomButton.Location = new System.Drawing.Point(55, 1);
             this.txtCantidadVenta.CustomButton.Name = "";
             this.txtCantidadVenta.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtCantidadVenta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -414,7 +538,7 @@
             this.txtCantidadVenta.CustomButton.UseSelectable = true;
             this.txtCantidadVenta.CustomButton.Visible = false;
             this.txtCantidadVenta.Lines = new string[0];
-            this.txtCantidadVenta.Location = new System.Drawing.Point(201, 108);
+            this.txtCantidadVenta.Location = new System.Drawing.Point(108, 260);
             this.txtCantidadVenta.MaxLength = 32767;
             this.txtCantidadVenta.Name = "txtCantidadVenta";
             this.txtCantidadVenta.PasswordChar = '\0';
@@ -423,7 +547,7 @@
             this.txtCantidadVenta.SelectionLength = 0;
             this.txtCantidadVenta.SelectionStart = 0;
             this.txtCantidadVenta.ShortcutsEnabled = true;
-            this.txtCantidadVenta.Size = new System.Drawing.Size(181, 23);
+            this.txtCantidadVenta.Size = new System.Drawing.Size(77, 23);
             this.txtCantidadVenta.TabIndex = 8;
             this.txtCantidadVenta.UseSelectable = true;
             this.txtCantidadVenta.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -435,7 +559,7 @@
             // 
             // 
             this.txtIdProductoVenta.CustomButton.Image = null;
-            this.txtIdProductoVenta.CustomButton.Location = new System.Drawing.Point(159, 1);
+            this.txtIdProductoVenta.CustomButton.Location = new System.Drawing.Point(55, 1);
             this.txtIdProductoVenta.CustomButton.Name = "";
             this.txtIdProductoVenta.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtIdProductoVenta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -444,7 +568,7 @@
             this.txtIdProductoVenta.CustomButton.UseSelectable = true;
             this.txtIdProductoVenta.CustomButton.Visible = false;
             this.txtIdProductoVenta.Lines = new string[0];
-            this.txtIdProductoVenta.Location = new System.Drawing.Point(201, 40);
+            this.txtIdProductoVenta.Location = new System.Drawing.Point(108, 20);
             this.txtIdProductoVenta.MaxLength = 32767;
             this.txtIdProductoVenta.Name = "txtIdProductoVenta";
             this.txtIdProductoVenta.PasswordChar = '\0';
@@ -453,7 +577,7 @@
             this.txtIdProductoVenta.SelectionLength = 0;
             this.txtIdProductoVenta.SelectionStart = 0;
             this.txtIdProductoVenta.ShortcutsEnabled = true;
-            this.txtIdProductoVenta.Size = new System.Drawing.Size(181, 23);
+            this.txtIdProductoVenta.Size = new System.Drawing.Size(77, 23);
             this.txtIdProductoVenta.TabIndex = 7;
             this.txtIdProductoVenta.UseSelectable = true;
             this.txtIdProductoVenta.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -461,7 +585,7 @@
             // 
             // btnAceptarVenta
             // 
-            this.btnAceptarVenta.Location = new System.Drawing.Point(346, 283);
+            this.btnAceptarVenta.Location = new System.Drawing.Point(344, 317);
             this.btnAceptarVenta.Name = "btnAceptarVenta";
             this.btnAceptarVenta.Size = new System.Drawing.Size(75, 35);
             this.btnAceptarVenta.TabIndex = 6;
@@ -471,26 +595,17 @@
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(214, 283);
+            this.metroButton3.Location = new System.Drawing.Point(199, 317);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(75, 35);
             this.metroButton3.TabIndex = 5;
             this.metroButton3.Text = "Limpiar";
             this.metroButton3.UseSelectable = true;
             // 
-            // metroLabel10
-            // 
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(45, 188);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(108, 19);
-            this.metroLabel10.TabIndex = 4;
-            this.metroLabel10.Text = "Stock Disponible:";
-            // 
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(45, 112);
+            this.metroLabel9.Location = new System.Drawing.Point(9, 260);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(65, 19);
             this.metroLabel9.TabIndex = 3;
@@ -499,7 +614,7 @@
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(45, 40);
+            this.metroLabel8.Location = new System.Drawing.Point(3, 20);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(82, 19);
             this.metroLabel8.TabIndex = 2;
@@ -524,10 +639,10 @@
             // 
             this.metroTabControl2.Controls.Add(this.metroTabPage4);
             this.metroTabControl2.Controls.Add(this.metroTabPage5);
-            this.metroTabControl2.Location = new System.Drawing.Point(13, 21);
+            this.metroTabControl2.Location = new System.Drawing.Point(13, 3);
             this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 1;
-            this.metroTabControl2.Size = new System.Drawing.Size(611, 335);
+            this.metroTabControl2.SelectedIndex = 0;
+            this.metroTabControl2.Size = new System.Drawing.Size(611, 353);
             this.metroTabControl2.TabIndex = 2;
             this.metroTabControl2.UseSelectable = true;
             // 
@@ -539,7 +654,7 @@
             this.metroTabPage4.HorizontalScrollbarSize = 10;
             this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(603, 293);
+            this.metroTabPage4.Size = new System.Drawing.Size(603, 311);
             this.metroTabPage4.TabIndex = 0;
             this.metroTabPage4.Text = "Entrada";
             this.metroTabPage4.VerticalScrollbarBarColor = true;
@@ -607,9 +722,11 @@
             // 
             // btnCaja
             // 
-            this.btnCaja.Location = new System.Drawing.Point(394, 30);
+            this.btnCaja.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCaja.BackgroundImage")));
+            this.btnCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCaja.Location = new System.Drawing.Point(452, 26);
             this.btnCaja.Name = "btnCaja";
-            this.btnCaja.Size = new System.Drawing.Size(75, 23);
+            this.btnCaja.Size = new System.Drawing.Size(32, 23);
             this.btnCaja.TabIndex = 12;
             this.btnCaja.UseVisualStyleBackColor = true;
             this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
@@ -632,6 +749,8 @@
             this.metroTabPage1.PerformLayout();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabControl2.ResumeLayout(false);
             this.metroTabPage4.ResumeLayout(false);
@@ -670,7 +789,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroTextBox metroTextBox8;
+        private MetroFramework.Controls.MetroTextBox txtDisponible;
         private MetroFramework.Controls.MetroTextBox txtCantidadVenta;
         private MetroFramework.Controls.MetroTextBox txtIdProductoVenta;
         private MetroFramework.Controls.MetroButton btnAceptarVenta;
@@ -680,5 +799,11 @@
         private MetroFramework.Controls.MetroButton btnVolver;
         private MetroFramework.Controls.MetroLabel lblSaldo;
         private System.Windows.Forms.Button btnCaja;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private MetroFramework.Controls.MetroTextBox txtDescripcion;
+        private MetroFramework.Controls.MetroTextBox txtPrecioVenta;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private System.Windows.Forms.Button btnBuscarID;
     }
 }

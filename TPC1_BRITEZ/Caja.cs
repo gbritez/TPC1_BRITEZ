@@ -18,7 +18,9 @@ namespace TPC1_BRITEZ
     {
         private CajaBusiness business = new CajaBusiness();
         private ProveedorBusiness provBusiness = new ProveedorBusiness();
+        private ProductoBusiness prodBusiness = new ProductoBusiness();
         private SetCaja setCaja = new SetCaja();
+        private EProducto productoVenta = new EProducto();
         public Caja()
         {
             InitializeComponent();
@@ -42,7 +44,7 @@ namespace TPC1_BRITEZ
             catch (Exception ex)
             {
 
-                MetroMessageBox.Show(Owner,ex.Message,"Error");
+                MetroMessageBox.Show(Owner, ex.Message, "Error");
             }
         }
 
@@ -59,7 +61,7 @@ namespace TPC1_BRITEZ
             }
             catch (Exception ex)
             {
-                MetroMessageBox.Show(Owner,ex.Message,"Error");
+                MetroMessageBox.Show(Owner, ex.Message, "Error");
             }
 
         }
@@ -68,16 +70,16 @@ namespace TPC1_BRITEZ
         {
             try
             {
-                var producto = new EProducto();
-                producto.id = int.Parse(txtIdProductoVenta.Text);
-                producto.stock = int.Parse(txtCantidadVenta.Text);
-                business.Transaccion(producto, false, Convert.ToDecimal(lblSaldo.Text));
+
+                productoVenta.id = int.Parse(txtIdProductoVenta.Text);
+                productoVenta.stock = int.Parse(txtCantidadVenta.Text);
+                business.Transaccion(productoVenta, false, Convert.ToDecimal(lblSaldo.Text));
 
             }
             catch (Exception ex)
             {
 
-               MetroMessageBox.Show(Owner,ex.Message,"Error");
+                MetroMessageBox.Show(Owner, ex.Message, "Error");
             }
         }
 
@@ -96,6 +98,21 @@ namespace TPC1_BRITEZ
             setCaja.ShowDialog();
         }
 
+        private void btnBuscarID_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                productoVenta = prodBusiness.GetByID(Convert.ToInt16(txtIdProductoVenta.Text));
+                txtDescripcion.Text = productoVenta.marca + " " + productoVenta.tipo;
+                txtPrecioVenta.Text = productoVenta.precioUnitario.ToString();
+                txtDisponible.Text = productoVenta.stock.ToString();
+            }
+            catch (Exception ex)
+            {
 
+                MetroMessageBox.Show(Owner, ex.Message);
+            }
+
+        }
     }
 }

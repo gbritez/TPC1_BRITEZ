@@ -13,6 +13,39 @@ namespace Services
     {
         string cnx = System.Configuration.ConfigurationManager.ConnectionStrings["Base"].ToString();
 
+        private bool ValidateStock(int id, int cantidad)
+        {
+            var QUERY = "SELECT * FROM PRODUCTO WHERE ID = " + id.ToString();
+            try
+            {
+                using (var connection = new SqlConnection(cnx))
+                {
+                    connection.Open();
+                    using (var cmd = new SqlCommand(QUERY, connection))
+                    {
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            if (Convert.ToInt16(reader.GetValue(0)) == id)
+                            {
+                                var stockMin = Convert.ToInt16(reader.GetValue(5));
+                                var stock = Convert.ToInt16(reader.GetValue(4));
+                                if (stock - cantidad < stockMin)
+                                {
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return true;
+        }
         public bool CheckIfExists(int id)
         {
             var QUERY = "GETPRODUCTOS";
@@ -41,40 +74,6 @@ namespace Services
             }
             return false;
         }
-        private bool ValidateStock(int id, int cantidad)
-        {
-            var QUERY = "SELECT * FROM PRODUCTO WHERE ID = " + id.ToString();
-            try
-            {
-                using (var connection = new SqlConnection(cnx))
-                {
-                    connection.Open();
-                    using (var cmd = new SqlCommand(QUERY, connection))
-                    {
-                        SqlDataReader reader = cmd.ExecuteReader();
-                        while(reader.Read())
-                        {
-                            if(Convert.ToInt16(reader.GetValue(0)) == id)
-                            {
-                                var stockMin = Convert.ToInt16(reader.GetValue(5));
-                                var stock = Convert.ToInt16(reader.GetValue(4));
-                                if( stock - cantidad < stockMin)
-                                {
-                                    return false;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            return true;
-        }
-
         public List<EProducto> GetAll()
         {
             var lista = new List<EProducto>();
@@ -109,6 +108,40 @@ namespace Services
             }
             return lista;
         }
+        public EProducto GetByID(int id)
+        {
+            var query = "SELECT * FROM PRODUCTO WHERE ID = " +id.ToString();
+            try
+            {
+                var Producto = new EProducto();
+                using (var connection = new SqlConnection(cnx))
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        SqlDataReader reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                          
+                            Producto.id = Convert.ToInt16(reader.GetValue(0));
+                            Producto.tipo = reader.GetValue(2).ToString();
+                            Producto.marca = reader.GetValue(1).ToString();
+                            Producto.precio = Convert.ToDecimal(reader.GetValue(3));
+                            Producto.precioUnitario = Convert.ToDecimal(reader.GetValue(7));
+                            Producto.stock = Convert.ToInt16(reader.GetValue(4));
+                            Producto.stockMinimo = Convert.ToInt16(reader.GetValue(5));
+                            //Producto.idProveedor = Convert.ToInt16(reader.GetValue(6));
+                            return Producto;
+                        }
+                    }
+                }
+                throw new Exception("El producto no existe.");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        } 
         public void Insert(EProducto producto)
         {
             try

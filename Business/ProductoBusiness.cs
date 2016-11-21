@@ -40,6 +40,20 @@ namespace Business
             }
         }
 
+        public EProducto GetByID(int ID)
+        {
+            try
+            {
+               return productoService.GetByID(ID);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+       
+        }
+
     }
 
     
