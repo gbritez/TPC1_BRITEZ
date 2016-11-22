@@ -28,59 +28,82 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.btnProductos = new MetroFramework.Controls.MetroButton();
             this.btnProveedores = new MetroFramework.Controls.MetroButton();
             this.btnClientes = new MetroFramework.Controls.MetroButton();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.btnCaja = new MetroFramework.Controls.MetroButton();
+            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.SuspendLayout();
             // 
             // btnProductos
             // 
+            this.btnProductos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProductos.BackgroundImage")));
+            this.btnProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProductos.Location = new System.Drawing.Point(82, 102);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(128, 120);
             this.btnProductos.TabIndex = 0;
-            this.btnProductos.Text = "PRODUCTOS";
+            this.metroToolTip1.SetToolTip(this.btnProductos, "Productos");
+            this.btnProductos.UseSelectable = true;
             this.btnProductos.UseWaitCursor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // btnProveedores
             // 
+            this.btnProveedores.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProveedores.BackgroundImage")));
+            this.btnProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnProveedores.Location = new System.Drawing.Point(232, 102);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(128, 120);
             this.btnProveedores.TabIndex = 1;
-            this.btnProveedores.Text = "PROVEEDORES";
+            this.metroToolTip1.SetToolTip(this.btnProveedores, "Proveedores");
+            this.btnProveedores.UseSelectable = true;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click_1);
             // 
             // btnClientes
             // 
+            this.btnClientes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClientes.BackgroundImage")));
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClientes.Location = new System.Drawing.Point(13, 262);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(128, 120);
             this.btnClientes.TabIndex = 2;
-            this.btnClientes.Text = "CLIENTES";
+            this.metroToolTip1.SetToolTip(this.btnClientes, "Clientes");
+            this.btnClientes.UseSelectable = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // metroButton5
             // 
+            this.metroButton5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroButton5.BackgroundImage")));
+            this.metroButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.metroButton5.Location = new System.Drawing.Point(310, 262);
             this.metroButton5.Name = "metroButton5";
             this.metroButton5.Size = new System.Drawing.Size(128, 120);
             this.metroButton5.TabIndex = 4;
-            this.metroButton5.Text = "SALIR";
+            this.metroToolTip1.SetToolTip(this.metroButton5, "Salir");
+            this.metroButton5.UseSelectable = true;
             this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
             // btnCaja
             // 
+            this.btnCaja.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCaja.BackgroundImage")));
+            this.btnCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCaja.Location = new System.Drawing.Point(163, 262);
             this.btnCaja.Name = "btnCaja";
             this.btnCaja.Size = new System.Drawing.Size(128, 120);
             this.btnCaja.TabIndex = 5;
-            this.btnCaja.Text = "CAJA";
+            this.metroToolTip1.SetToolTip(this.btnCaja, "Caja");
+            this.btnCaja.UseSelectable = true;
             this.btnCaja.UseWaitCursor = true;
             this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
+            // 
+            // metroToolTip1
+            // 
+            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroToolTip1.StyleManager = null;
+            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // MainMenu
             // 
@@ -107,6 +130,7 @@
         private MetroFramework.Controls.MetroButton btnClientes;
         private MetroFramework.Controls.MetroButton metroButton5;
         private MetroFramework.Controls.MetroButton btnCaja;
+        private MetroFramework.Components.MetroToolTip metroToolTip1;
     }
 }
 
