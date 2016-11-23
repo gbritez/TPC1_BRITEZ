@@ -16,7 +16,7 @@ namespace Entities
         private long _telefono;
 
         #region Propiedades
-        public int Id
+        public int ID
         {
             get
             {
@@ -40,7 +40,7 @@ namespace Entities
             }
         }
 
-        public long Cuil
+        public long CUIL
         {
             get
             {
@@ -52,7 +52,7 @@ namespace Entities
             }
         }
 
-        public long Dni
+        public long DNI
         {
             get
             {

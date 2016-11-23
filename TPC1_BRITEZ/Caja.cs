@@ -26,7 +26,16 @@ namespace TPC1_BRITEZ
         {
             InitializeComponent();
         }
+        private void LoadGrid(DataGridView grid)
+        {
+            grid.Columns[0].HeaderText = "N° de operación";
+            grid.Columns[1].HeaderText = "Descripción";
+            grid.Columns[2].HeaderText = "Cantidad";
+            grid.Columns[3].HeaderText = "Precio";
+            grid.Columns[4].HeaderText = "Total";
+            grid.Columns[5].HeaderText = "Fecha";
 
+        }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             try
@@ -59,6 +68,8 @@ namespace TPC1_BRITEZ
                 lblSaldo.Text = business.GetSaldo().ToString();
                 dataGridView1.DataSource = business.GetHistorico("COMPRA_HISTORICO");
                 dataGridView2.DataSource = business.GetHistorico("VENTA_HISTORICO");
+                LoadGrid(dataGridView1);
+                LoadGrid(dataGridView2);
             }
             catch (Exception ex)
             {

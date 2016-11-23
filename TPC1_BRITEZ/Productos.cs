@@ -18,6 +18,19 @@ namespace TPC1_BRITEZ
     {
         private ProductoBusiness business = new ProductoBusiness();
         private ProveedorBusiness provBusiness = new ProveedorBusiness();
+        private void LoadGrid ()
+        {
+            var lista = business.GetAll();
+            dataGridView1.DataSource = lista;
+            dataGridView1.Columns[0].HeaderText = "Marca";
+            dataGridView1.Columns[1].HeaderText = "Tipo";
+            dataGridView1.Columns[2].HeaderText = "ID Producto";
+            dataGridView1.Columns[3].HeaderText = "Precio";
+            dataGridView1.Columns[4].HeaderText = "Precio Unitario";
+            dataGridView1.Columns[5].HeaderText = "Stock";
+            dataGridView1.Columns[6].HeaderText = "Stock Mínimo";
+            dataGridView1.Columns[7].Visible = false;
+        }
         private void cargarCombo()
         {
             cmbFiltro.Items.Add("MARCA");
@@ -40,10 +53,8 @@ namespace TPC1_BRITEZ
                 cargarCombo();
                 cmbProveedor.DataSource = provBusiness.getAll();
                 cmbProveedor.DisplayMember = "Nombre";
-                cmbProveedor.ValueMember = "ID"; 
-                var lista = business.GetAll();
-                dataGridView1.DataSource = lista;
-                dataGridView1.Columns[7].Visible = false;
+                cmbProveedor.ValueMember = "ID";
+                LoadGrid();
                 
             }
             catch (Exception ex)

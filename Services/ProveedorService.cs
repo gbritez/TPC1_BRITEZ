@@ -33,7 +33,7 @@ namespace Services
                         return Lista;
                     }
                 }
-                    return Lista;
+
             }
             catch (Exception ex)
             {

@@ -1,0 +1,13 @@
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\bin\Debug\TestTPC.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\bin\Debug\TestTPC.pdb
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\bin\Debug\Castle.Core.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\bin\Debug\Moq.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\bin\Debug\nunit.framework.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\bin\Debug\Castle.Core.xml
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\bin\Debug\Moq.xml
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\bin\Debug\nunit.framework.xml
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\obj\Debug\TestTPC.csprojResolveAssemblyReference.cache
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\obj\Debug\TestTPC.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\obj\Debug\TestTPC.pdb

@@ -27,10 +27,10 @@ namespace Services
                         while (reader.Read())
                         {
                             var cliente = new ECliente();
-                            cliente.Id = Convert.ToInt16(reader.GetValue(0));
+                            cliente.ID = Convert.ToInt16(reader.GetValue(0));
                             cliente.Nombre = reader.GetValue(1).ToString();
-                            cliente.Cuil = Convert.ToInt64(reader.GetValue(2));
-                            cliente.Dni = Convert.ToInt64(reader.GetValue(3));
+                            cliente.CUIL = Convert.ToInt64(reader.GetValue(2));
+                            cliente.DNI = Convert.ToInt64(reader.GetValue(3));
                             cliente.Domicilio = reader.GetValue(4).ToString();
                             cliente.Telefono = Convert.ToInt64(reader.GetValue(5));
                             lista.Add(cliente);
