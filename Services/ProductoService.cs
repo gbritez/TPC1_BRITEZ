@@ -155,7 +155,7 @@ namespace Services
                         cmd.Parameters.AddWithValue("@pTIPO", producto.tipo);
                         cmd.Parameters.AddWithValue("@pMARCA", producto.marca);
                         cmd.Parameters.AddWithValue("@pPRECIO", producto.precio);
-                        cmd.Parameters.AddWithValue("@pSTOCK", producto.stock);
+                        cmd.Parameters.AddWithValue("@pSTOCK", producto.Cantidad);
                         cmd.Parameters.AddWithValue("@pSTOCKMINIMO", producto.stockMinimo);
                         cmd.Parameters.AddWithValue("@pIDPROVEEDOR", producto.idProveedor);
                         cmd.Parameters.AddWithValue("@pPRECIO_UNITARIO", producto.precio);
@@ -169,7 +169,7 @@ namespace Services
                 throw ex;
             }
         }
-        public void Update(EProducto producto)
+        public void Update(IList<EProducto> Producto)
         {
             try
             {
@@ -179,6 +179,7 @@ namespace Services
                     var QUERY = "UPDATE PRODUCTO(TIPO,MARCA,PRECIO,STOCK,STOCKMINIMO,IDPROVEEDOR) VALUES (@pTIPO,@pMARCA,@pPRECIO,@pSTOCK,@pSTOCKMINIMO,@pIDPROVEEDOR)";
                     using (SqlCommand cmd = new SqlCommand(QUERY, connection))
                     {
+                        foreach (EProducto producto in Producto) { 
                         cmd.Parameters.AddWithValue("@pTIPO", producto.tipo);
                         cmd.Parameters.AddWithValue("@pMARCA", producto.marca);
                         cmd.Parameters.AddWithValue("@pPRECIO", producto.precio);
@@ -186,6 +187,7 @@ namespace Services
                         cmd.Parameters.AddWithValue("@pSTOCKMINIMO", producto.stockMinimo);
                         cmd.Parameters.AddWithValue("@pIDPROVEEDOR", producto.idProveedor);
                         cmd.ExecuteNonQuery();
+                        }
                     }
                 }
             }

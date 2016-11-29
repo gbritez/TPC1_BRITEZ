@@ -35,11 +35,11 @@
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(108, 199);
+            this.btnEnviar.Location = new System.Drawing.Point(108, 222);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(75, 23);
             this.btnEnviar.TabIndex = 0;
-            this.btnEnviar.Text = "metroButton1";
+            this.btnEnviar.Text = "Aceptar";
             this.btnEnviar.UseSelectable = true;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
@@ -48,9 +48,9 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(23, 137);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(81, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(49, 19);
             this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "metroLabel1";
+            this.metroLabel1.Text = "Saldo: ";
             // 
             // txtImporte
             // 
@@ -66,8 +66,7 @@
             this.txtImporte.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtImporte.CustomButton.UseSelectable = true;
             this.txtImporte.CustomButton.Visible = false;
-            this.txtImporte.Lines = new string[] {
-        "metroTextBox1"};
+            this.txtImporte.Lines = new string[0];
             this.txtImporte.Location = new System.Drawing.Point(128, 137);
             this.txtImporte.MaxLength = 32767;
             this.txtImporte.Name = "txtImporte";
@@ -79,7 +78,6 @@
             this.txtImporte.ShortcutsEnabled = true;
             this.txtImporte.Size = new System.Drawing.Size(135, 23);
             this.txtImporte.TabIndex = 2;
-            this.txtImporte.Text = "metroTextBox1";
             this.txtImporte.UseSelectable = true;
             this.txtImporte.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtImporte.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);

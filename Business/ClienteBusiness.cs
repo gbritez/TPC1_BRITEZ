@@ -23,5 +23,18 @@ namespace Business
                 throw ex;
             }
         }
+
+        public void Insert(ECliente cliente)
+        {
+            try
+            {
+                service.Insert(cliente);
+            }
+            catch ( Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

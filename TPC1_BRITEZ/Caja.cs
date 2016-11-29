@@ -21,12 +21,14 @@ namespace TPC1_BRITEZ
         private ProductoBusiness prodBusiness = new ProductoBusiness();
         private SetCaja setCaja = new SetCaja();
         private EProducto productoVenta = new EProducto();
+        private List<EProducto> ventaList = new List<EProducto>();
+       
 
         public Caja()
         {
             InitializeComponent();
         }
-        private void LoadGrid(DataGridView grid)
+        private void FormatGrid(DataGridView grid)
         {
             grid.Columns[0].HeaderText = "N° de operación";
             grid.Columns[1].HeaderText = "Descripción";
@@ -40,15 +42,17 @@ namespace TPC1_BRITEZ
         {
             try
             {
+                var productoList = new List<EProducto>();
                 var producto = new EProducto();
                 producto.id = int.Parse(txtId.Text);
                 producto.marca = txtMarca.Text;
                 producto.tipo = txtTipo.Text;
-                producto.stock = int.Parse(txtCantidad.Text);
+                producto.Cantidad = int.Parse(txtCantidad.Text);
                 producto.precio = Convert.ToDecimal(txtPrecio.Text);
                 producto.precioUnitario = Convert.ToDecimal(txtPrecio.Text);
                 producto.idProveedor = (int)cmbProveedor.SelectedValue;
-                business.Transaccion(producto, true, Convert.ToDecimal(lblSaldo.Text));
+                productoList.Add(producto);
+                business.Transaccion(productoList, true, Convert.ToDecimal(lblSaldo.Text));
 
             }
             catch (Exception ex)
@@ -66,10 +70,11 @@ namespace TPC1_BRITEZ
                 cmbProveedor.DisplayMember = "Nombre";
                 cmbProveedor.ValueMember = "ID";
                 lblSaldo.Text = business.GetSaldo().ToString();
-                dataGridView1.DataSource = business.GetHistorico("COMPRA_HISTORICO");
-                dataGridView2.DataSource = business.GetHistorico("VENTA_HISTORICO");
-                LoadGrid(dataGridView1);
-                LoadGrid(dataGridView2);
+                metroGrid2.DataSource = business.GetHistorico("COMPRA_HISTORICO");
+                metroGrid3.DataSource = business.GetHistorico("VENTA_HISTORICO");
+                FormatGrid(metroGrid2);
+                FormatGrid(metroGrid3);
+                VentasGrid.DataSource = prodBusiness.GetAll();
             }
             catch (Exception ex)
             {
@@ -83,9 +88,9 @@ namespace TPC1_BRITEZ
             try
             {
 
-                productoVenta.id = int.Parse(txtIdProductoVenta.Text);
-                productoVenta.stock = int.Parse(txtCantidadVenta.Text);
-                business.Transaccion(productoVenta, false, Convert.ToDecimal(lblSaldo.Text));
+                business.Transaccion(ventaList, false, Convert.ToDecimal(lblSaldo.Text));
+                ventaList.Clear();
+                VentasGrid.DataSource = prodBusiness.GetAll();
 
             }
             catch (Exception ex)
@@ -110,26 +115,18 @@ namespace TPC1_BRITEZ
             setCaja.ShowDialog();
         }
 
-        private void btnBuscarID_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                productoVenta = prodBusiness.GetByID(Convert.ToInt16(txtIdProductoVenta.Text));
-                txtDescripcion.Text = productoVenta.marca + " " + productoVenta.tipo;
-                txtPrecioVenta.Text = productoVenta.precioUnitario.ToString();
-                txtDisponible.Text = productoVenta.stock.ToString();
-            }
-            catch (Exception ex)
-            {
-
-                MetroMessageBox.Show(Owner, ex.Message);
-            }
-
-        }
-
         private void btnLimpiarCompra_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void carroBtn_Click(object sender, EventArgs e)
+        {
+            productoVenta = (EProducto)VentasGrid.CurrentRow.DataBoundItem;
+            var form = new SetCantidadForm(ref productoVenta);
+            form.ShowDialog();
+            ventaList.Add(productoVenta);
+            
         }
     }
 }

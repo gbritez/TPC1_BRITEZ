@@ -112,6 +112,12 @@
     <Compile Include="SetCaja.Designer.cs">
       <DependentUpon>SetCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="SetCantidadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetCantidadForm.Designer.cs">
+      <DependentUpon>SetCantidadForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ABM.resx">
       <DependentUpon>ABM.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SetCaja.resx">
       <DependentUpon>SetCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetCantidadForm.resx">
+      <DependentUpon>SetCantidadForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

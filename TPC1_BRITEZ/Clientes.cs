@@ -15,6 +15,7 @@ namespace TPC1_BRITEZ
     public partial class Clientes : ABM
     {
         private ClienteBusiness business = new ClienteBusiness();
+        private ECliente cliente = new ECliente();
         private void cargarCombo()
         {
             cmbFiltro.Items.Add("NOMBRE");
@@ -32,12 +33,17 @@ namespace TPC1_BRITEZ
         private void Clientes_Load(object sender, EventArgs e)
         {
             cargarCombo();
-            dataGridView1.DataSource = business.GetAll();
+            metroGrid1.DataSource = business.GetAll();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
+            cliente.CUIL = Convert.ToInt64(txtCUIL.Text);
+            cliente.DNI = Convert.ToInt64(txtDNI.Text);
+            cliente.Nombre = txtNombre.Text;
+            cliente.Telefono = Convert.ToInt64(txtTelefono.Text);
+            cliente.Domicilio = txtDomicilio.Text;
+            business.Insert(cliente);
         }
     }
 }

@@ -19,36 +19,42 @@ namespace Business
         /// </summary>
         /// <param name="producto"></param>
         /// <param name="ban"></param>
-        public void Transaccion(EProducto producto, bool ban, decimal saldo)
+        public void Transaccion(List<EProducto> Producto, bool ban, decimal saldo)
         {
+            var Total = getTotal(Producto, ban);
             try
             {
-                FillHistorico(producto,ban);
+                FillHistorico(Producto, ban, Total);
 
                 //Si es una compra, valido tener saldo.
-                if (ban && producto.precio * producto.stock > saldo )
+                if (ban && Total > saldo)
                 {
                     throw new Exception("No posee saldo suficiente para realizar esta transacción.");
                 }
-                //Si es una venta y no existe el producto...
-                if (!ban && !prodService.CheckIfExists(producto.id))
-                {
-                    throw new Exception("El producto no existe en la base de datos.");
-                }
-
                 //Si es una compra checkeo si el producto ya existe y hago un Update
-                if (prodService.CheckIfExists(producto.id))
+                if (prodService.CheckIfExists(Producto.First().id))
                 {
-                    prodService.UpdateStock(producto.id, producto.stock, ban);    
-               }
+                    if (ban)
+                    {
+                        prodService.UpdateStock(Producto.First().id, Producto.First().Cantidad, ban);
+                    }
+                    else
+                    {
+                        foreach (EProducto producto in Producto)
+                        {
+                            prodService.UpdateStock(producto.id, producto.Cantidad, ban);
+                        }
+                    }
+
+                }
                 //Caso contrario Inserto el nuevo producto.
                 else
                 {
-                    prodService.Insert(producto);          
+                    prodService.Insert(Producto.First());
                 }
 
                 //Dependiendo si es compra o venta mando determinada tabla al historico
-                if(ban)
+                if (ban)
                 {
                     cajaService.GrabarHistorico(_historico, "COMPRA_HISTORICO");
                 }
@@ -56,7 +62,7 @@ namespace Business
                 {
                     cajaService.GrabarHistorico(_historico, "VENTA_HISTORICO");
                 }
-                    
+
             }
             catch (Exception ex)
             {
@@ -93,7 +99,7 @@ namespace Business
             }
         }
 
-        public List<EHistorico> GetHistorico (string tabla)
+        public List<EHistorico> GetHistorico(string tabla)
         {
 
             try
@@ -108,23 +114,52 @@ namespace Business
             }
         }
 
-        private void FillHistorico (EProducto producto, bool ban)
+        private void FillHistorico(List<EProducto> Producto, bool ban, decimal total)
         {
-            _historico.cantidad = producto.stock;
-            _historico.descripcion = producto.tipo + " " + producto.marca;
-            _historico.fecha = DateTime.Now; 
-            if (ban)
+            foreach (EProducto producto in Producto)
             {
-                _historico.precio = producto.precio;
+                _historico.cantidad = producto.Cantidad;
+                _historico.descripcion = producto.tipo + " " + producto.marca;
+                _historico.fecha = DateTime.Now;
+                if (ban)
+                {
+                    _historico.precio = producto.precio;
+
+                }
+                else
+                {
+                    _historico.precio = producto.precioUnitario;
+                }
 
             }
-            else
-            {
-                _historico.precio = producto.precioUnitario;
-            }
-            _historico.total = _historico.cantidad * _historico.precio;
+            _historico.total = total;
         }
 
-        
+        private decimal getTotal(IList<EProducto> Producto, bool ban)
+        {
+            Decimal aux = 0;
+            try
+            {
+                foreach (EProducto producto in Producto)
+                {
+                    if (ban)
+                    {
+                        aux += producto.precioUnitario * producto.Cantidad;
+                    }
+                    else
+                    {
+                        aux += producto.precio * producto.Cantidad;
+                    }
+
+                }
+                return aux;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

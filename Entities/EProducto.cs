@@ -16,7 +16,7 @@ namespace Entities
         private int _stock;
         private int _stockMinimo;
         private int _idProveedor;
-
+        private int _cantidad;
         #region Propiedades
         public string marca
         {
@@ -111,6 +111,17 @@ namespace Entities
             set
             {
                 _idProveedor = value;
+            }
+        }
+        public int Cantidad
+        {
+            get
+            {
+                return _cantidad;
+            }
+            set
+            {
+                _cantidad = value;
             }
         }
         #endregion

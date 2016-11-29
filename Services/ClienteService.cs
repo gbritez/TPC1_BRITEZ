@@ -46,9 +46,30 @@ namespace Services
             }
         }
 
-        public void Insert()
+        public void Insert(ECliente cliente)
         {
+            var QUERY = "INSERT INTO CLIENTE(NOMBRE,CUIL,DNI,DOMICILIO,TELEFONO) VALUES (@pNOMBRE,@pCUIL,@pDNI,@pDOMICILIO,@pTELEFONO)";
+            try
+            {
+                using (SqlConnection cnx = new SqlConnection(CONNECTION))
+                {
+                    cnx.Open();
+                    using(SqlCommand cmd = new SqlCommand(QUERY, cnx))
+                    {
+                        cmd.Parameters.AddWithValue("@pNOMBRE", cliente.Nombre);
+                        cmd.Parameters.AddWithValue("@pCUIL", cliente.CUIL);
+                        cmd.Parameters.AddWithValue("@pDNI", cliente.DNI);
+                        cmd.Parameters.AddWithValue("@pDOMICILIO", cliente.Domicilio);
+                        cmd.Parameters.AddWithValue("@pTELEFONO", cliente.Telefono);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
         }
     }
 }

@@ -21,15 +21,15 @@ namespace TPC1_BRITEZ
         private void LoadGrid ()
         {
             var lista = business.GetAll();
-            dataGridView1.DataSource = lista;
-            dataGridView1.Columns[0].HeaderText = "Marca";
-            dataGridView1.Columns[1].HeaderText = "Tipo";
-            dataGridView1.Columns[2].HeaderText = "ID Producto";
-            dataGridView1.Columns[3].HeaderText = "Precio";
-            dataGridView1.Columns[4].HeaderText = "Precio Unitario";
-            dataGridView1.Columns[5].HeaderText = "Stock";
-            dataGridView1.Columns[6].HeaderText = "Stock Mínimo";
-            dataGridView1.Columns[7].Visible = false;
+            metroGrid1.DataSource = lista;
+            metroGrid1.Columns[0].HeaderText = "Marca";
+            metroGrid1.Columns[1].HeaderText = "Tipo";
+            metroGrid1.Columns[2].HeaderText = "ID Producto";
+            metroGrid1.Columns[3].HeaderText = "Precio";
+            metroGrid1.Columns[4].HeaderText = "Precio Unitario";
+            metroGrid1.Columns[5].HeaderText = "Stock";
+            metroGrid1.Columns[6].HeaderText = "Stock Mínimo";
+            metroGrid1.Columns[7].Visible = false;
         }
         private void cargarCombo()
         {
@@ -79,7 +79,7 @@ namespace TPC1_BRITEZ
             try
             {
                 business.Insert(producto);
-                dataGridView1.DataSource = business.GetAll();
+                metroGrid1.DataSource = business.GetAll();
                 
             }
             catch (Exception ex)

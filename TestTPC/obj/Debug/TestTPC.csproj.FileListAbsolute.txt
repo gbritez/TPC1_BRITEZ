@@ -11,3 +11,16 @@ C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\bin\Debug\Microsoft.Visual
 C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\obj\Debug\TestTPC.csprojResolveAssemblyReference.cache
 C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\obj\Debug\TestTPC.dll
 C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\TestTPC\obj\Debug\TestTPC.pdb
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\TestTPC\bin\Debug\TestTPC.dll
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\TestTPC\bin\Debug\TestTPC.pdb
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\TestTPC\bin\Debug\Castle.Core.dll
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\TestTPC\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\TestTPC\bin\Debug\Moq.dll
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\TestTPC\bin\Debug\nunit.framework.dll
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\TestTPC\bin\Debug\Castle.Core.xml
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\TestTPC\bin\Debug\Moq.xml
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\TestTPC\bin\Debug\nunit.framework.xml
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\TestTPC\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\TestTPC\obj\Debug\TestTPC.csprojResolveAssemblyReference.cache
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\TestTPC\obj\Debug\TestTPC.dll
+C:\Users\yaravi\Source\Repos\TPC1_BRITEZ\TestTPC\obj\Debug\TestTPC.pdb

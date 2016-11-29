@@ -58,7 +58,7 @@ namespace TPC1_BRITEZ
             try
             {
                 cargarCombo();
-                dataGridView1.DataSource = business.getAll();
+                metroGrid1.DataSource = business.getAll();
             }
             catch (Exception)
             {
