@@ -25,7 +25,7 @@ namespace Business
             try
             {
                 FillHistorico(Producto, ban, Total);
-
+               
                 //Si es una compra, valido tener saldo.
                 if (ban && Total > saldo)
                 {
@@ -56,10 +56,12 @@ namespace Business
                 //Dependiendo si es compra o venta mando determinada tabla al historico
                 if (ban)
                 {
+                    _historico.nOperacion = cajaService.GetNextVal("COMPRA_HISTORICO");
                     cajaService.GrabarHistorico(_historico, "COMPRA_HISTORICO");
                 }
                 else
-                {
+                { 
+                    _historico.nOperacion = cajaService.GetNextVal("VENTA_HISTORICO");
                     cajaService.GrabarHistorico(_historico, "VENTA_HISTORICO");
                 }
 
@@ -144,11 +146,12 @@ namespace Business
                 {
                     if (ban)
                     {
-                        aux += producto.precioUnitario * producto.Cantidad;
+                        aux += producto.precio * producto.Cantidad;
+                        
                     }
                     else
                     {
-                        aux += producto.precio * producto.Cantidad;
+                        aux += producto.precioUnitario * producto.Cantidad;
                     }
 
                 }

@@ -65,7 +65,7 @@ namespace Services
 
         public void GrabarHistorico(EHistorico historico, string tabla)
         {
-            var QUERY = "INSERT INTO "+ tabla + "(DESCRIPCION,CANTIDAD,PRECIO_UNITARIO,TOTAL,FECHA) VALUES (@pDESCRIPCION,@pCANTIDAD,@pPRECIO_UNITARIO,@pTOTAL,@pFECHA)";
+            var QUERY = "INSERT INTO "+ tabla + "(NOPERACION,DESCRIPCION,CANTIDAD,PRECIO_UNITARIO,TOTAL,FECHA) VALUES (@pNOPERACION,@pDESCRIPCION,@pCANTIDAD,@pPRECIO_UNITARIO,@pTOTAL,@pFECHA)";
 
             try
             {
@@ -73,13 +73,13 @@ namespace Services
                 {
                     cnx.Open();
                     using (SqlCommand cmd = new SqlCommand(QUERY, cnx))
-                    {                      
+                    {
+                        cmd.Parameters.AddWithValue("@pNOPERACION", historico.nOperacion);
                         cmd.Parameters.AddWithValue("@pDESCRIPCION", historico.descripcion);
                         cmd.Parameters.AddWithValue("@pCANTIDAD", historico.cantidad);                       
                         cmd.Parameters.AddWithValue("@pFECHA", historico.fecha);
                         cmd.Parameters.AddWithValue("@pPRECIO_UNITARIO", historico.precio);
                         cmd.Parameters.AddWithValue("@pTOTAL", historico.total );
-
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -127,6 +127,31 @@ namespace Services
             }
         }
 
+        public int GetNextVal(string table)
+        {
+            var res = 0;
+            var QUERY = "SELECT MAX(NOPERACION) + 1 FROM " + table;
+            try
+            {
+                using (SqlConnection cnx = new SqlConnection(connection))
+                {
+                    cnx.Open();
+                    using (SqlCommand cmd = new SqlCommand(QUERY, cnx))
+                    {
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while(reader.Read())
+                        {
+                            res = (int)reader.GetValue(0);
+                        }
+                    }
+                }
+                return res;
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+        }
     }
 }

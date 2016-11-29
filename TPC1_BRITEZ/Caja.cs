@@ -28,7 +28,7 @@ namespace TPC1_BRITEZ
         {
             InitializeComponent();
         }
-        private void FormatGrid(DataGridView grid)
+        private void FormatGridHistorico(DataGridView grid)
         {
             grid.Columns[0].HeaderText = "N° de operación";
             grid.Columns[1].HeaderText = "Descripción";
@@ -72,9 +72,10 @@ namespace TPC1_BRITEZ
                 lblSaldo.Text = business.GetSaldo().ToString();
                 metroGrid2.DataSource = business.GetHistorico("COMPRA_HISTORICO");
                 metroGrid3.DataSource = business.GetHistorico("VENTA_HISTORICO");
-                FormatGrid(metroGrid2);
-                FormatGrid(metroGrid3);
+                FormatGridHistorico(metroGrid2);
+                FormatGridHistorico(metroGrid3);
                 VentasGrid.DataSource = prodBusiness.GetAll();
+           
             }
             catch (Exception ex)
             {
@@ -122,11 +123,26 @@ namespace TPC1_BRITEZ
 
         private void carroBtn_Click(object sender, EventArgs e)
         {
+            try { 
             productoVenta = (EProducto)VentasGrid.CurrentRow.DataBoundItem;
             var form = new SetCantidadForm(ref productoVenta);
             form.ShowDialog();
-            ventaList.Add(productoVenta);
-            
+            if(productoVenta.Cantidad != 0)
+            {
+                ventaList.Add(productoVenta);
+            }
+            }
+            catch(Exception ex)
+            {
+                MetroMessageBox.Show(Owner, ex.Message, "Error");
+            }
+
+        }
+
+        private void verCarroBtn_Click(object sender, EventArgs e)
+        {
+            var form = new CarroGrid(ref ventaList);
+            form.ShowDialog();
         }
     }
 }

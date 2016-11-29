@@ -28,7 +28,7 @@ namespace TPC1_BRITEZ
             try
             {
                Producto.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                this.Close();
+               this.Close();
             }
             catch ( Exception ex)
             {
