@@ -116,11 +116,6 @@ namespace TPC1_BRITEZ
             setCaja.ShowDialog();
         }
 
-        private void btnLimpiarCompra_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void carroBtn_Click(object sender, EventArgs e)
         {
             try { 

@@ -36,14 +36,14 @@
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new MetroFramework.Controls.MetroButton();
             this.txtFiltro = new MetroFramework.Controls.MetroTextBox();
             this.cmbFiltro = new MetroFramework.Controls.MetroComboBox();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
+            this.btnVolver = new MetroFramework.Controls.MetroButton();
+            this.btnBuscar = new MetroFramework.Controls.MetroButton();
             this.btnAceptar = new MetroFramework.Controls.MetroButton();
             this.btnLimpiar = new MetroFramework.Controls.MetroButton();
-            this.btnVolver = new MetroFramework.Controls.MetroButton();
-            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
@@ -57,7 +57,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 58);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(754, 521);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
@@ -134,17 +134,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda Avanzada";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(634, 19);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(30, 23);
-            this.btnBuscar.TabIndex = 2;
-            this.metroToolTip1.SetToolTip(this.btnBuscar, "Buscar");
-            this.btnBuscar.UseSelectable = true;
-            // 
             // txtFiltro
             // 
             // 
@@ -201,10 +190,39 @@
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
+            // metroToolTip1
+            // 
+            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroToolTip1.StyleManager = null;
+            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolver.BackgroundImage")));
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVolver.Location = new System.Drawing.Point(716, 585);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(46, 35);
+            this.btnVolver.TabIndex = 1;
+            this.metroToolTip1.SetToolTip(this.btnVolver, "Volver");
+            this.btnVolver.UseSelectable = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBuscar.Location = new System.Drawing.Point(634, 19);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(30, 23);
+            this.btnBuscar.TabIndex = 2;
+            this.metroToolTip1.SetToolTip(this.btnBuscar, "Buscar");
+            this.btnBuscar.UseSelectable = true;
+            // 
             // btnAceptar
             // 
             this.btnAceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceptar.BackgroundImage")));
-            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAceptar.Location = new System.Drawing.Point(434, 434);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(46, 35);
@@ -215,31 +233,13 @@
             // btnLimpiar
             // 
             this.btnLimpiar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.BackgroundImage")));
-            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnLimpiar.Location = new System.Drawing.Point(280, 434);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(46, 35);
             this.btnLimpiar.TabIndex = 2;
             this.metroToolTip1.SetToolTip(this.btnLimpiar, "Limpiar");
             this.btnLimpiar.UseSelectable = true;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolver.BackgroundImage")));
-            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVolver.Location = new System.Drawing.Point(716, 585);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(46, 35);
-            this.btnVolver.TabIndex = 1;
-            this.metroToolTip1.SetToolTip(this.btnVolver, "Volver");
-            this.btnVolver.UseSelectable = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // metroToolTip1
-            // 
-            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroToolTip1.StyleManager = null;
-            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // ABM
             // 
