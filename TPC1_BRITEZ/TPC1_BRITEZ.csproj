@@ -124,6 +124,7 @@
     <Compile Include="SetCantidadForm.Designer.cs">
       <DependentUpon>SetCantidadForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validaciones.cs" />
     <EmbeddedResource Include="ABM.resx">
       <DependentUpon>ABM.cs</DependentUpon>
     </EmbeddedResource>

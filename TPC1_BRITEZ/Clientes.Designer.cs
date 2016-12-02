@@ -44,10 +44,27 @@
             this.metroTabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // metroTabControl1
+            // metroTabPage1
             // 
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage1.Size = new System.Drawing.Size(746, 479);
             this.metroTabPage1.Controls.SetChildIndex(this.groupBox1, 0);
+            // 
+            // txtFiltro
+            // 
+            // 
+            // 
+            // 
+            this.txtFiltro.CustomButton.Image = null;
+            this.txtFiltro.CustomButton.Location = new System.Drawing.Point(143, 1);
+            this.txtFiltro.CustomButton.Name = "";
+            this.txtFiltro.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtFiltro.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtFiltro.CustomButton.TabIndex = 1;
+            this.txtFiltro.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtFiltro.CustomButton.UseSelectable = true;
+            this.txtFiltro.CustomButton.Visible = false;
+            this.txtFiltro.Lines = new string[0];
             // 
             // metroTabPage2
             // 
@@ -61,6 +78,8 @@
             this.metroTabPage2.Controls.Add(this.metroLabel3);
             this.metroTabPage2.Controls.Add(this.metroLabel2);
             this.metroTabPage2.Controls.Add(this.metroLabel1);
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage2.Size = new System.Drawing.Size(746, 479);
             this.metroTabPage2.Controls.SetChildIndex(this.btnLimpiar, 0);
             this.metroTabPage2.Controls.SetChildIndex(this.btnAceptar, 0);
             this.metroTabPage2.Controls.SetChildIndex(this.metroLabel1, 0);
@@ -119,44 +138,164 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.Location = new System.Drawing.Point(47, 250);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(61, 19);
             this.metroLabel5.TabIndex = 8;
             this.metroLabel5.Text = "Teléfono:";
             // 
             // txtNombre
             // 
+            this.txtNombre.AccessibleName = "Nombre";
+            // 
+            // 
+            // 
+            this.txtNombre.CustomButton.Image = null;
+            this.txtNombre.CustomButton.Location = new System.Drawing.Point(194, 1);
+            this.txtNombre.CustomButton.Name = "";
+            this.txtNombre.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNombre.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNombre.CustomButton.TabIndex = 1;
+            this.txtNombre.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNombre.CustomButton.UseSelectable = true;
+            this.txtNombre.CustomButton.Visible = false;
+            this.txtNombre.Lines = new string[0];
             this.txtNombre.Location = new System.Drawing.Point(205, 44);
+            this.txtNombre.MaxLength = 32767;
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.PasswordChar = '\0';
+            this.txtNombre.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNombre.SelectedText = "";
+            this.txtNombre.SelectionLength = 0;
+            this.txtNombre.SelectionStart = 0;
+            this.txtNombre.ShortcutsEnabled = true;
             this.txtNombre.Size = new System.Drawing.Size(216, 23);
             this.txtNombre.TabIndex = 9;
+            this.txtNombre.UseSelectable = true;
+            this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNombre.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtCUIL
             // 
+            this.txtCUIL.AccessibleName = "CUIL";
+            // 
+            // 
+            // 
+            this.txtCUIL.CustomButton.Image = null;
+            this.txtCUIL.CustomButton.Location = new System.Drawing.Point(194, 1);
+            this.txtCUIL.CustomButton.Name = "";
+            this.txtCUIL.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtCUIL.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtCUIL.CustomButton.TabIndex = 1;
+            this.txtCUIL.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtCUIL.CustomButton.UseSelectable = true;
+            this.txtCUIL.CustomButton.Visible = false;
+            this.txtCUIL.Lines = new string[0];
             this.txtCUIL.Location = new System.Drawing.Point(205, 95);
+            this.txtCUIL.MaxLength = 32767;
             this.txtCUIL.Name = "txtCUIL";
+            this.txtCUIL.PasswordChar = '\0';
+            this.txtCUIL.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCUIL.SelectedText = "";
+            this.txtCUIL.SelectionLength = 0;
+            this.txtCUIL.SelectionStart = 0;
+            this.txtCUIL.ShortcutsEnabled = true;
             this.txtCUIL.Size = new System.Drawing.Size(216, 23);
             this.txtCUIL.TabIndex = 10;
+            this.txtCUIL.UseSelectable = true;
+            this.txtCUIL.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtCUIL.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtDNI
             // 
+            this.txtDNI.AccessibleName = "DNI";
+            // 
+            // 
+            // 
+            this.txtDNI.CustomButton.Image = null;
+            this.txtDNI.CustomButton.Location = new System.Drawing.Point(194, 1);
+            this.txtDNI.CustomButton.Name = "";
+            this.txtDNI.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDNI.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDNI.CustomButton.TabIndex = 1;
+            this.txtDNI.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDNI.CustomButton.UseSelectable = true;
+            this.txtDNI.CustomButton.Visible = false;
+            this.txtDNI.Lines = new string[0];
             this.txtDNI.Location = new System.Drawing.Point(205, 147);
+            this.txtDNI.MaxLength = 32767;
             this.txtDNI.Name = "txtDNI";
+            this.txtDNI.PasswordChar = '\0';
+            this.txtDNI.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDNI.SelectedText = "";
+            this.txtDNI.SelectionLength = 0;
+            this.txtDNI.SelectionStart = 0;
+            this.txtDNI.ShortcutsEnabled = true;
             this.txtDNI.Size = new System.Drawing.Size(216, 23);
             this.txtDNI.TabIndex = 11;
+            this.txtDNI.UseSelectable = true;
+            this.txtDNI.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDNI.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtDomicilio
             // 
+            this.txtDomicilio.AccessibleName = "Domicilio";
+            // 
+            // 
+            // 
+            this.txtDomicilio.CustomButton.Image = null;
+            this.txtDomicilio.CustomButton.Location = new System.Drawing.Point(194, 1);
+            this.txtDomicilio.CustomButton.Name = "";
+            this.txtDomicilio.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDomicilio.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDomicilio.CustomButton.TabIndex = 1;
+            this.txtDomicilio.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDomicilio.CustomButton.UseSelectable = true;
+            this.txtDomicilio.CustomButton.Visible = false;
+            this.txtDomicilio.Lines = new string[0];
             this.txtDomicilio.Location = new System.Drawing.Point(205, 198);
+            this.txtDomicilio.MaxLength = 32767;
             this.txtDomicilio.Name = "txtDomicilio";
+            this.txtDomicilio.PasswordChar = '\0';
+            this.txtDomicilio.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDomicilio.SelectedText = "";
+            this.txtDomicilio.SelectionLength = 0;
+            this.txtDomicilio.SelectionStart = 0;
+            this.txtDomicilio.ShortcutsEnabled = true;
             this.txtDomicilio.Size = new System.Drawing.Size(216, 23);
             this.txtDomicilio.TabIndex = 12;
+            this.txtDomicilio.UseSelectable = true;
+            this.txtDomicilio.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDomicilio.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtTelefono
             // 
+            this.txtTelefono.AccessibleName = "Teléfono";
+            // 
+            // 
+            // 
+            this.txtTelefono.CustomButton.Image = null;
+            this.txtTelefono.CustomButton.Location = new System.Drawing.Point(194, 1);
+            this.txtTelefono.CustomButton.Name = "";
+            this.txtTelefono.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtTelefono.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtTelefono.CustomButton.TabIndex = 1;
+            this.txtTelefono.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtTelefono.CustomButton.UseSelectable = true;
+            this.txtTelefono.CustomButton.Visible = false;
+            this.txtTelefono.Lines = new string[0];
             this.txtTelefono.Location = new System.Drawing.Point(205, 250);
+            this.txtTelefono.MaxLength = 32767;
             this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.PasswordChar = '\0';
+            this.txtTelefono.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTelefono.SelectedText = "";
+            this.txtTelefono.SelectionLength = 0;
+            this.txtTelefono.SelectionStart = 0;
+            this.txtTelefono.ShortcutsEnabled = true;
             this.txtTelefono.Size = new System.Drawing.Size(216, 23);
             this.txtTelefono.TabIndex = 13;
+            this.txtTelefono.UseSelectable = true;
+            this.txtTelefono.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtTelefono.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // Clientes
             // 

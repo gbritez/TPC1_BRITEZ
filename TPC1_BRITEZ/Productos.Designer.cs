@@ -114,6 +114,7 @@
             // 
             // txtTipo
             // 
+            this.txtTipo.AccessibleName = "Tipo";
             // 
             // 
             // 
@@ -144,6 +145,7 @@
             // 
             // txtMarca
             // 
+            this.txtMarca.AccessibleName = "Marca";
             // 
             // 
             // 
@@ -174,6 +176,7 @@
             // 
             // txtPrecio
             // 
+            this.txtPrecio.AccessibleName = "Precio";
             // 
             // 
             // 
@@ -204,6 +207,7 @@
             // 
             // txtStock
             // 
+            this.txtStock.AccessibleName = "Stock";
             // 
             // 
             // 
@@ -234,6 +238,7 @@
             // 
             // txtStockMin
             // 
+            this.txtStockMin.AccessibleName = "Stock Mínimo";
             // 
             // 
             // 
@@ -312,7 +317,7 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.Location = new System.Drawing.Point(344, 39);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(74, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(75, 19);
             this.metroLabel6.TabIndex = 16;
             this.metroLabel6.Text = "Proveedor:";
             // 

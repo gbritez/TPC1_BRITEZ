@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
+using MetroFramework.Controls;
 
 namespace TPC1_BRITEZ
 {
@@ -18,7 +19,26 @@ namespace TPC1_BRITEZ
     {
         private ProductoBusiness business = new ProductoBusiness();
         private ProveedorBusiness provBusiness = new ProveedorBusiness();
-        private void LoadGrid ()
+        private EProducto producto = new EProducto();
+        protected void Validar()
+        {
+            validacion.ValidateText(txtTipo.Text, txtTipo.AccessibleName);
+            validacion.ValidateText(txtMarca.Text, txtMarca.AccessibleName);
+            validacion.ValidateNumbers(txtPrecio.Text, txtPrecio.AccessibleName);
+            validacion.ValidateNumbers(txtStock.Text,txtStock.AccessibleName);
+            validacion.ValidateNumbers(txtStockMin.Text, txtStock.AccessibleName);
+        }
+        private void Map()
+        {
+            producto.tipo = txtTipo.Text;
+            producto.marca = txtMarca.Text;
+            producto.precio = Convert.ToDecimal(txtPrecio.Text);
+            producto.precioUnitario = Convert.ToDecimal(txtPrecio.Text);
+            producto.stock = Convert.ToInt32(txtStock.Text);
+            producto.stockMinimo = Convert.ToInt32(txtStockMin.Text);
+            producto.idProveedor = (int)cmbProveedor.SelectedValue;
+        }
+        private void LoadGrid()
         {
             var lista = business.GetAll();
             metroGrid1.DataSource = lista;
@@ -55,7 +75,7 @@ namespace TPC1_BRITEZ
                 cmbProveedor.DisplayMember = "Nombre";
                 cmbProveedor.ValueMember = "ID";
                 LoadGrid();
-                
+
             }
             catch (Exception ex)
             {
@@ -68,24 +88,21 @@ namespace TPC1_BRITEZ
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            var producto = new EProducto();
-            producto.tipo = txtTipo.Text;
-            producto.marca = txtMarca.Text;
-            producto.precio = Convert.ToDecimal(txtPrecio.Text);
-            producto.precioUnitario = Convert.ToDecimal(txtPrecio.Text);
-            producto.stock = Convert.ToInt32(txtStock.Text);
-            producto.stockMinimo = Convert.ToInt32(txtStockMin.Text);
-            producto.idProveedor = (int)cmbProveedor.SelectedValue;
+
             try
             {
+                Validar();
+                Map();
                 business.Insert(producto);
                 metroGrid1.DataSource = business.GetAll();
-                
+                producto = new EProducto();
+
             }
             catch (Exception ex)
             {
 
                 MetroMessageBox.Show(Owner, ex.Message, "Error");
+                producto = new EProducto();
             }
 
         }
@@ -96,9 +113,9 @@ namespace TPC1_BRITEZ
             var busqueda = txtFiltro.Text;
             try
             {
-                
+
             }
-            catch ( Exception ex)
+            catch (Exception ex)
             {
 
                 MetroMessageBox.Show(Owner, ex.Message, "Error");

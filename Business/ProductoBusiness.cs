@@ -10,8 +10,9 @@ namespace Business
 {
     public class ProductoBusiness
     {
-        ProductoService productoService = new ProductoService();
+        private ProductoService productoService = new ProductoService();
 
+    
         public List<EProducto> GetAll()
         {
             var lista = new List<EProducto>();

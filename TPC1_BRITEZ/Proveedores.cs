@@ -17,11 +17,34 @@ namespace TPC1_BRITEZ
     public partial class Proveedores : ABM
     {
         private ProveedorBusiness business = new ProveedorBusiness();
+        private EProveedor proveedor = new EProveedor();
         public Proveedores()
         {
             InitializeComponent();
         }
 
+        private void Map()
+        {
+            proveedor.Nombre = txtNombre.Text;
+            proveedor.Cuit = Convert.ToInt64(txtCuit.Text);
+            proveedor.Telefono = Convert.ToInt64(txtTelefono.Text);
+            proveedor.Domicilio = txtDomicilio.Text;
+        }
+        private void Validar()
+        {
+            try
+            {
+                validacion.ValidateNumbers(txtCuit.Text, txtCuit.AccessibleName);
+                validacion.ValidateNumbers(txtTelefono.Text, txtTelefono.AccessibleName);
+                validacion.ValidateText(txtNombre.Text, txtNombre.AccessibleName);
+                validacion.CheckIfEmpty(txtDomicilio.Text, txtDomicilio.AccessibleName);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         private void cargarCombo()
         {
             cmbFiltro.Items.Add("NOMBRE");
@@ -34,16 +57,12 @@ namespace TPC1_BRITEZ
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            var proveedor = new EProveedor();
-            var business = new ProveedorBusiness();
+
             try
             {
-                
-                proveedor.Nombre = txtNombre.Text;
-                proveedor.Cuit = Convert.ToInt64(txtCuit.Text);
-                proveedor.Telefono = Convert.ToInt64(txtTelefono.Text);
-                proveedor.Domicilio = txtDomicilio.Text;
+                Validar();
                 business.Insert(proveedor);
+                proveedor = new EProveedor();
                 MetroMessageBox.Show(Owner,"Proveedor ingresado con éxito.");
             }
             catch (Exception ex)
