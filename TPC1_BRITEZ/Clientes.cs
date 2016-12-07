@@ -59,6 +59,8 @@ namespace TPC1_BRITEZ
                 Map();
                 business.Insert(cliente);
                 cliente = new ECliente();
+
+                MetroMessageBox.Show(Owner, "Cliente ingresado con éxito.");
             }
             catch (Exception ex)
             {

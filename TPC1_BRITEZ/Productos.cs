@@ -96,6 +96,7 @@ namespace TPC1_BRITEZ
                 business.Insert(producto);
                 metroGrid1.DataSource = business.GetAll();
                 producto = new EProducto();
+                MetroMessageBox.Show(Owner, "Producto ingresado con éxito.");
 
             }
             catch (Exception ex)

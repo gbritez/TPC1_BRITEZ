@@ -35,6 +35,7 @@ namespace TPC1_BRITEZ
         {
             try
             {
+                Validar();
                 Business.SetSaldo(Convert.ToDecimal(txtImporte.Text));
             }
             catch (Exception ex)

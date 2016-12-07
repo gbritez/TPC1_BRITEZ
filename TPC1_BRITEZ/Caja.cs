@@ -33,11 +33,11 @@ namespace TPC1_BRITEZ
 
         private void ValidarCompra()
         {
-            validacion.ValidateNumbers(txtCantidad.Text,txtCantidad.AccessibleName);
-            validacion.ValidateNumbers(txtPrecio.Text,txtPrecio.AccessibleName);
+            validacion.ValidateNumbers(txtCantidad.Text, txtCantidad.AccessibleName);
+            validacion.ValidateNumbers(txtPrecio.Text, txtPrecio.AccessibleName);
             validacion.ValidateNumbersOnly(txtId.Text, txtId.AccessibleName);
-            validacion.ValidateText(txtMarca.Text,txtMarca.AccessibleName);
-            validacion.ValidateText(txtTipo.Text,txtTipo.AccessibleName);
+            validacion.ValidateText(txtMarca.Text, txtMarca.AccessibleName);
+            validacion.ValidateText(txtTipo.Text, txtTipo.AccessibleName);
         }
         private void MapCompra()
         {
@@ -69,6 +69,8 @@ namespace TPC1_BRITEZ
                 MapCompra();
                 business.Transaccion(compraList, true, Convert.ToDecimal(lblSaldo.Text));
 
+                MetroMessageBox.Show(Owner, "Compra realizada con éxito.");
+
             }
             catch (Exception ex)
             {
@@ -90,7 +92,7 @@ namespace TPC1_BRITEZ
                 FormatGridHistorico(metroGrid2);
                 FormatGridHistorico(metroGrid3);
                 VentasGrid.DataSource = prodBusiness.GetAll();
-           
+
             }
             catch (Exception ex)
             {
@@ -107,6 +109,7 @@ namespace TPC1_BRITEZ
                 business.Transaccion(ventaList, false, Convert.ToDecimal(lblSaldo.Text));
                 ventaList.Clear();
                 VentasGrid.DataSource = prodBusiness.GetAll();
+                MetroMessageBox.Show(Owner, "Venta realizada con éxito.");
 
             }
             catch (Exception ex)
@@ -133,16 +136,17 @@ namespace TPC1_BRITEZ
 
         private void carroBtn_Click(object sender, EventArgs e)
         {
-            try { 
-            productoVenta = (EProducto)VentasGrid.CurrentRow.DataBoundItem;
-            var form = new SetCantidadForm(ref productoVenta);
-            form.ShowDialog();
-            if(productoVenta.Cantidad != 0)
+            try
             {
-                ventaList.Add(productoVenta);
+                productoVenta = (EProducto)VentasGrid.CurrentRow.DataBoundItem;
+                var form = new SetCantidadForm(ref productoVenta);
+                form.ShowDialog();
+                if (productoVenta.Cantidad != 0)
+                {
+                    ventaList.Add(productoVenta);
+                }
             }
-            }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MetroMessageBox.Show(Owner, ex.Message, "Error");
             }
