@@ -15,6 +15,12 @@ namespace TPC1_BRITEZ
     public partial class SetCaja : MetroFramework.Forms.MetroForm
     {
         private CajaBusiness Business = new CajaBusiness();
+        private Validaciones validacion = new Validaciones();
+
+        private void Validar()
+        {
+            validacion.ValidateNumbers(txtImporte.Text, txtImporte.AccessibleName);
+        }
         public SetCaja()
         {
             InitializeComponent();
@@ -29,6 +35,7 @@ namespace TPC1_BRITEZ
         {
             try
             {
+                Validar();
                 Business.SetSaldo(Convert.ToDecimal(txtImporte.Text));
             }
             catch (Exception ex)

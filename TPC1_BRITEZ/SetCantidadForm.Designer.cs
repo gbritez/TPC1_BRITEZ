@@ -35,11 +35,11 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(110, 180);
+            this.metroButton1.Location = new System.Drawing.Point(108, 201);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(75, 23);
             this.metroButton1.TabIndex = 0;
-            this.metroButton1.Text = "metroButton1";
+            this.metroButton1.Text = "Aceptar";
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
@@ -48,9 +48,9 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(24, 122);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(65, 19);
             this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "metroLabel1";
+            this.metroLabel1.Text = "Cantidad:";
             // 
             // txtCantidad
             // 
@@ -67,7 +67,7 @@
             this.txtCantidad.CustomButton.UseSelectable = true;
             this.txtCantidad.CustomButton.Visible = false;
             this.txtCantidad.Lines = new string[0];
-            this.txtCantidad.Location = new System.Drawing.Point(152, 117);
+            this.txtCantidad.Location = new System.Drawing.Point(159, 118);
             this.txtCantidad.MaxLength = 32767;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.PasswordChar = '\0';

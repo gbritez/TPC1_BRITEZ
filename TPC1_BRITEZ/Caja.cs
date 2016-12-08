@@ -22,13 +22,36 @@ namespace TPC1_BRITEZ
         private SetCaja setCaja = new SetCaja();
         private EProducto productoVenta = new EProducto();
         private List<EProducto> ventaList = new List<EProducto>();
-       
+        private Validaciones validacion = new Validaciones();
+        private List<EProducto> compraList = new List<EProducto>();
+        private EProducto producto = new EProducto();
 
         public Caja()
         {
             InitializeComponent();
         }
-        private void FormatGrid(DataGridView grid)
+
+        private void ValidarCompra()
+        {
+            validacion.ValidateNumbers(txtCantidad.Text, txtCantidad.AccessibleName);
+            validacion.ValidateNumbers(txtPrecio.Text, txtPrecio.AccessibleName);
+            validacion.ValidateNumbersOnly(txtId.Text, txtId.AccessibleName);
+            validacion.ValidateText(txtMarca.Text, txtMarca.AccessibleName);
+            validacion.ValidateText(txtTipo.Text, txtTipo.AccessibleName);
+        }
+        private void MapCompra()
+        {
+
+            producto.id = int.Parse(txtId.Text);
+            producto.marca = txtMarca.Text;
+            producto.tipo = txtTipo.Text;
+            producto.Cantidad = int.Parse(txtCantidad.Text);
+            producto.precio = Convert.ToDecimal(txtPrecio.Text);
+            producto.precioUnitario = Convert.ToDecimal(txtPrecio.Text);
+            producto.idProveedor = (int)cmbProveedor.SelectedValue;
+            compraList.Add(producto);
+        }
+        private void FormatGridHistorico(DataGridView grid)
         {
             grid.Columns[0].HeaderText = "N° de operación";
             grid.Columns[1].HeaderText = "Descripción";
@@ -42,17 +65,11 @@ namespace TPC1_BRITEZ
         {
             try
             {
-                var productoList = new List<EProducto>();
-                var producto = new EProducto();
-                producto.id = int.Parse(txtId.Text);
-                producto.marca = txtMarca.Text;
-                producto.tipo = txtTipo.Text;
-                producto.Cantidad = int.Parse(txtCantidad.Text);
-                producto.precio = Convert.ToDecimal(txtPrecio.Text);
-                producto.precioUnitario = Convert.ToDecimal(txtPrecio.Text);
-                producto.idProveedor = (int)cmbProveedor.SelectedValue;
-                productoList.Add(producto);
-                business.Transaccion(productoList, true, Convert.ToDecimal(lblSaldo.Text));
+                ValidarCompra();
+                MapCompra();
+                business.Transaccion(compraList, true, Convert.ToDecimal(lblSaldo.Text));
+
+                MetroMessageBox.Show(Owner, "Compra realizada con éxito.");
 
             }
             catch (Exception ex)
@@ -72,9 +89,10 @@ namespace TPC1_BRITEZ
                 lblSaldo.Text = business.GetSaldo().ToString();
                 metroGrid2.DataSource = business.GetHistorico("COMPRA_HISTORICO");
                 metroGrid3.DataSource = business.GetHistorico("VENTA_HISTORICO");
-                FormatGrid(metroGrid2);
-                FormatGrid(metroGrid3);
+                FormatGridHistorico(metroGrid2);
+                FormatGridHistorico(metroGrid3);
                 VentasGrid.DataSource = prodBusiness.GetAll();
+
             }
             catch (Exception ex)
             {
@@ -91,6 +109,7 @@ namespace TPC1_BRITEZ
                 business.Transaccion(ventaList, false, Convert.ToDecimal(lblSaldo.Text));
                 ventaList.Clear();
                 VentasGrid.DataSource = prodBusiness.GetAll();
+                MetroMessageBox.Show(Owner, "Venta realizada con éxito.");
 
             }
             catch (Exception ex)
@@ -115,18 +134,29 @@ namespace TPC1_BRITEZ
             setCaja.ShowDialog();
         }
 
-        private void btnLimpiarCompra_Click(object sender, EventArgs e)
+        private void carroBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                productoVenta = (EProducto)VentasGrid.CurrentRow.DataBoundItem;
+                var form = new SetCantidadForm(ref productoVenta);
+                form.ShowDialog();
+                if (productoVenta.Cantidad != 0)
+                {
+                    ventaList.Add(productoVenta);
+                }
+            }
+            catch (Exception ex)
+            {
+                MetroMessageBox.Show(Owner, ex.Message, "Error");
+            }
 
         }
 
-        private void carroBtn_Click(object sender, EventArgs e)
+        private void verCarroBtn_Click(object sender, EventArgs e)
         {
-            productoVenta = (EProducto)VentasGrid.CurrentRow.DataBoundItem;
-            var form = new SetCantidadForm(ref productoVenta);
+            var form = new CarroGrid(ref ventaList);
             form.ShowDialog();
-            ventaList.Add(productoVenta);
-            
         }
     }
 }

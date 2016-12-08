@@ -44,7 +44,6 @@
             // 
             // metroTabControl1
             // 
-            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(761, 521);
             // 
             // metroTabPage1
@@ -98,6 +97,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.AccessibleName = "Nombre";
             // 
             // 
             // 
@@ -128,6 +128,7 @@
             // 
             // txtCuit
             // 
+            this.txtCuit.AccessibleName = "CUIL";
             // 
             // 
             // 
@@ -176,6 +177,7 @@
             // 
             // txtDomicilio
             // 
+            this.txtDomicilio.AccessibleName = "Domicilio";
             // 
             // 
             // 
@@ -206,6 +208,7 @@
             // 
             // txtTelefono
             // 
+            this.txtTelefono.AccessibleName = "Teléfono";
             // 
             // 
             // 
@@ -248,7 +251,7 @@
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.Location = new System.Drawing.Point(61, 220);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(61, 19);
             this.metroLabel4.TabIndex = 11;
             this.metroLabel4.Text = "Teléfono:";
             // 

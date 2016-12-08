@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities;
 using Business;
-
+using MetroFramework;
 namespace TPC1_BRITEZ
 {   
     public partial class Clientes : ABM
@@ -29,7 +29,22 @@ namespace TPC1_BRITEZ
         {
             InitializeComponent();
         }
-
+        private void Map()
+        {
+            cliente.CUIL = Convert.ToInt64(txtCUIL.Text);
+            cliente.DNI = Convert.ToInt64(txtDNI.Text);
+            cliente.Nombre = txtNombre.Text;
+            cliente.Telefono = Convert.ToInt64(txtTelefono.Text);
+            cliente.Domicilio = txtDomicilio.Text;
+        }
+        private void Validar()
+        {
+            validacion.ValidateText(txtNombre.Text, txtNombre.AccessibleName);
+            validacion.CheckIfEmpty(txtDomicilio.Text, txtDomicilio.AccessibleName);
+            validacion.ValidateNumbers(txtDNI.Text, txtDNI.AccessibleName);
+            validacion.ValidateNumbers(txtCUIL.Text, txtCUIL.AccessibleName);
+            validacion.ValidateNumbers(txtTelefono.Text, txtTelefono.AccessibleName);
+        }
         private void Clientes_Load(object sender, EventArgs e)
         {
             cargarCombo();
@@ -38,12 +53,21 @@ namespace TPC1_BRITEZ
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            cliente.CUIL = Convert.ToInt64(txtCUIL.Text);
-            cliente.DNI = Convert.ToInt64(txtDNI.Text);
-            cliente.Nombre = txtNombre.Text;
-            cliente.Telefono = Convert.ToInt64(txtTelefono.Text);
-            cliente.Domicilio = txtDomicilio.Text;
-            business.Insert(cliente);
+            try
+            {
+                Validar();
+                Map();
+                business.Insert(cliente);
+                cliente = new ECliente();
+
+                MetroMessageBox.Show(Owner, "Cliente ingresado con éxito.");
+            }
+            catch (Exception ex)
+            {
+
+               MetroMessageBox.Show(Owner, ex.Message);
+            }
+            
         }
     }
 }

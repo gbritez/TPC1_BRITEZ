@@ -15,7 +15,11 @@ namespace TPC1_BRITEZ
     public partial class SetCantidadForm : MetroFramework.Forms.MetroForm
     {
         private EProducto Producto = new EProducto();
-
+        private Validaciones validacion = new Validaciones();
+        private void Validar ()
+        {
+            validacion.ValidateNumbers(txtCantidad.Text, txtCantidad.AccessibleName);
+        }
         public SetCantidadForm(ref EProducto producto)
         {
             InitializeComponent();
@@ -27,8 +31,9 @@ namespace TPC1_BRITEZ
         {
             try
             {
+                Validar();
                Producto.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                this.Close();
+               this.Close();
             }
             catch ( Exception ex)
             {

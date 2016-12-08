@@ -24,8 +24,7 @@ namespace Business
             var Total = getTotal(Producto, ban);
             try
             {
-                FillHistorico(Producto, ban, Total);
-
+                
                 //Si es una compra, valido tener saldo.
                 if (ban && Total > saldo)
                 {
@@ -56,11 +55,19 @@ namespace Business
                 //Dependiendo si es compra o venta mando determinada tabla al historico
                 if (ban)
                 {
+                    FillHistorico(Producto.First(), ban, Total);
+
+                    _historico.nOperacion = cajaService.GetNextVal("COMPRA_HISTORICO");
                     cajaService.GrabarHistorico(_historico, "COMPRA_HISTORICO");
                 }
                 else
                 {
-                    cajaService.GrabarHistorico(_historico, "VENTA_HISTORICO");
+                    _historico.nOperacion = cajaService.GetNextVal("VENTA_HISTORICO");
+                    foreach (EProducto producto in Producto)
+                    {
+                        FillHistorico(producto, ban, Total);
+                        cajaService.GrabarHistorico(_historico, "VENTA_HISTORICO");
+                    }
                 }
 
             }
@@ -114,10 +121,9 @@ namespace Business
             }
         }
 
-        private void FillHistorico(List<EProducto> Producto, bool ban, decimal total)
+        private void FillHistorico(EProducto producto, bool ban, decimal total)
         {
-            foreach (EProducto producto in Producto)
-            {
+       
                 _historico.cantidad = producto.Cantidad;
                 _historico.descripcion = producto.tipo + " " + producto.marca;
                 _historico.fecha = DateTime.Now;
@@ -131,7 +137,7 @@ namespace Business
                     _historico.precio = producto.precioUnitario;
                 }
 
-            }
+            
             _historico.total = total;
         }
 
@@ -144,11 +150,12 @@ namespace Business
                 {
                     if (ban)
                     {
-                        aux += producto.precioUnitario * producto.Cantidad;
+                        aux += producto.precio * producto.Cantidad;
+                        
                     }
                     else
                     {
-                        aux += producto.precio * producto.Cantidad;
+                        aux += producto.precioUnitario * producto.Cantidad;
                     }
 
                 }
