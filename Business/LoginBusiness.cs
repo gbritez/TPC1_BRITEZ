@@ -15,12 +15,12 @@ namespace Business
             return false;
         }
 
-        public bool Login (EUsuario User)
+        public bool Login ()
         {
             var LogService = new LoginService();
             try
             {
-                if (LogService.Login(User))
+                if (LogService.Login())
                 {
                     return true;    
                 }

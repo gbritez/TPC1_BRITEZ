@@ -110,11 +110,12 @@ namespace TPC1_BRITEZ
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            var filter = cmbFiltro.SelectedText;
+            var filter = cmbFiltro.SelectedItem.ToString();
             var busqueda = txtFiltro.Text;
             try
             {
-
+                metroGrid1.DataSource = business.GetByFilter(filter, busqueda);
+                metroGrid1.Refresh();
             }
             catch (Exception ex)
             {

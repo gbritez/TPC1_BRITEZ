@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class EUsuario
+    public static class EUsuario
     {
-        private string _user;
-        private string _password;
+        private static string _user;
+        private static string _password;
+        private static string _tipo;
 
-        public string user
+        public static string user
         {
             get
             {
@@ -22,7 +23,7 @@ namespace Entities
                 _user = value;
             }
         }
-        public string password
+        public static string password
         {
             get
             {
@@ -31,6 +32,17 @@ namespace Entities
             set
             {
                 _password = value;
+            }
+        }
+        public static string tipo
+        {
+            get
+            {
+                return _tipo;
+            }
+            set
+            {
+                _tipo = value;
             }
         }
     }

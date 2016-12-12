@@ -27,7 +27,7 @@ namespace TPC1_BRITEZ
         {
             proveedor.Nombre = txtNombre.Text;
             proveedor.Cuit = Convert.ToInt64(txtCuit.Text);
-            proveedor.Telefono = Convert.ToInt64(txtTelefono.Text);
+            proveedor.Telefono = txtTelefono.Text;
             proveedor.Domicilio = txtDomicilio.Text;
         }
         private void Validar()
@@ -61,6 +61,7 @@ namespace TPC1_BRITEZ
             try
             {
                 Validar();
+                Map();
                 business.Insert(proveedor);
                 proveedor = new EProveedor();
                 MetroMessageBox.Show(Owner,"Proveedor ingresado con éxito.");
@@ -85,6 +86,22 @@ namespace TPC1_BRITEZ
                 throw;
             }
            
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var filter = cmbFiltro.SelectedItem.ToString();
+            var busqueda = txtFiltro.Text;
+            try
+            {
+                metroGrid1.DataSource = business.GetByFilter(filter, busqueda);
+                metroGrid1.Refresh();
+            }
+            catch (Exception ex)
+            {
+
+                MetroMessageBox.Show(Owner, ex.Message, "Error");
+            }
         }
     }
 }

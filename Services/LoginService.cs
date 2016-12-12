@@ -11,7 +11,7 @@ namespace Services
 {
     public class LoginService
     {
-        public bool Login(EUsuario User)
+        public bool Login()
         {
             var cnxstring = System.Configuration.ConfigurationManager.ConnectionStrings["Base"].ToString();
             var query = "SELECT * From USUARIOS";
@@ -26,7 +26,7 @@ namespace Services
                         SqlDataReader reader = command.ExecuteReader();
                         while (reader.Read())
                         {
-                            if(User.user == reader.GetValue(0).ToString() && User.password == reader.GetValue(1).ToString() )
+                            if(EUsuario.user == reader.GetValue(0).ToString() && EUsuario.password == reader.GetValue(1).ToString() )
                             {
                                 return true;
                             }

@@ -28,6 +28,8 @@ namespace Services
                             prov.ID = Convert.ToInt32(reader.GetValue(0));
                             prov.Nombre = Convert.ToString(reader.GetValue(1));
                             prov.Cuit = Convert.ToInt64(reader.GetValue(2));
+                            prov.Telefono = reader.GetValue(3).ToString();
+                            prov.Domicilio = reader.GetValue(4).ToString();
                             Lista.Add(prov);                          
                         }
                         return Lista;
@@ -70,6 +72,39 @@ namespace Services
         {
 
         }
-       
+
+        public List<EProveedor> GetByFilter(string filter, string busqueda)
+        {
+
+            var Lista = new List<EProveedor>();
+            var query = "SELECT * FROM CLIENTE WHERE " + filter + " LIKE '%" + busqueda + "%'";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Conn))
+                {
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            var prov = new EProveedor();
+                            prov.ID = Convert.ToInt32(reader.GetValue(0));
+                            prov.Nombre = Convert.ToString(reader.GetValue(1));
+                            prov.Cuit = Convert.ToInt64(reader.GetValue(2));
+                            prov.Telefono = reader.GetValue(3).ToString();
+                            prov.Domicilio = reader.GetValue(4).ToString();
+                            Lista.Add(prov);
+                        }
+                    }
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

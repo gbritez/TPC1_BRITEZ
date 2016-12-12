@@ -34,7 +34,7 @@ namespace TPC1_BRITEZ
             cliente.CUIL = Convert.ToInt64(txtCUIL.Text);
             cliente.DNI = Convert.ToInt64(txtDNI.Text);
             cliente.Nombre = txtNombre.Text;
-            cliente.Telefono = Convert.ToInt64(txtTelefono.Text);
+            cliente.Telefono = txtTelefono.Text;
             cliente.Domicilio = txtDomicilio.Text;
         }
         private void Validar()
@@ -68,6 +68,22 @@ namespace TPC1_BRITEZ
                MetroMessageBox.Show(Owner, ex.Message);
             }
             
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var filter = cmbFiltro.SelectedItem.ToString();
+            var busqueda = txtFiltro.Text;
+            try
+            {
+                metroGrid1.DataSource = business.GetByFilter(filter, busqueda);
+                metroGrid1.Refresh();
+            }
+            catch (Exception ex)
+            {
+
+                MetroMessageBox.Show(Owner, ex.Message, "Error");
+            }
         }
     }
 }

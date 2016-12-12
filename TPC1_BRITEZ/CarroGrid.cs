@@ -35,14 +35,34 @@ namespace TPC1_BRITEZ
         {
             try
             {
-
                 productoList.Clear();
                 RefreshGrid();
             }
             catch(Exception ex)
             {
-                
+                throw ex;
             }
+        }
+
+        private void eliminarBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                productoList.Remove((EProducto)metroGrid1.CurrentRow.DataBoundItem);
+                metroGrid1.DataSource = productoList;
+                metroGrid1.Refresh();
+
+            }
+            catch (Exception ex)
+            {
+               
+                throw ex;
+            }
+        }
+
+        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

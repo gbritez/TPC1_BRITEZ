@@ -44,6 +44,7 @@
             // 
             // metroTabControl1
             // 
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(761, 521);
             // 
             // metroTabPage1
@@ -51,6 +52,10 @@
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Size = new System.Drawing.Size(753, 479);
             this.metroTabPage1.Controls.SetChildIndex(this.groupBox1, 0);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtFiltro
             // 
@@ -251,7 +256,7 @@
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.Location = new System.Drawing.Point(61, 220);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(61, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(63, 19);
             this.metroLabel4.TabIndex = 11;
             this.metroLabel4.Text = "Teléfono:";
             // 

@@ -128,7 +128,7 @@ namespace Services
                             Producto.marca = reader.GetValue(1).ToString();
                             Producto.precio = Convert.ToDecimal(reader.GetValue(3));
                             Producto.precioUnitario = Convert.ToDecimal(reader.GetValue(7));
-                            Producto.stock = Convert.ToInt16(reader.GetValue(4));
+                            Producto.Cantidad = Convert.ToInt16(reader.GetValue(4));
                             Producto.stockMinimo = Convert.ToInt16(reader.GetValue(5));
                             //Producto.idProveedor = Convert.ToInt16(reader.GetValue(6));
                             return Producto;
@@ -158,7 +158,7 @@ namespace Services
                         cmd.Parameters.AddWithValue("@pSTOCK", producto.Cantidad);
                         cmd.Parameters.AddWithValue("@pSTOCKMINIMO", producto.stockMinimo);
                         cmd.Parameters.AddWithValue("@pIDPROVEEDOR", producto.idProveedor);
-                        cmd.Parameters.AddWithValue("@pPRECIO_UNITARIO", producto.precio);
+                        cmd.Parameters.AddWithValue("@pPRECIO_UNITARIO", producto.precioUnitario);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -224,6 +224,42 @@ namespace Services
                 throw ex;
             }
     
+        }
+        
+        public List<EProducto> GetByFilter (string filter, string busqueda)
+        {
+            
+            var Lista = new List<EProducto>();
+            var query = "SELECT * FROM PRODUCTO WHERE " + filter + " LIKE '%" + busqueda +"%'";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(cnx))
+                {
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            var Producto = new EProducto();
+                            Producto.id = Convert.ToInt16(reader.GetValue(0));
+                            Producto.tipo = reader.GetValue(2).ToString();
+                            Producto.marca = reader.GetValue(1).ToString();
+                            Producto.precio = Convert.ToDecimal(reader.GetValue(3));
+                            Producto.precioUnitario = Convert.ToDecimal(reader.GetValue(7));
+                            Producto.stock = Convert.ToInt16(reader.GetValue(4));
+                            Producto.stockMinimo = Convert.ToInt16(reader.GetValue(5));
+                            Lista.Add(Producto);
+                        }
+                    }
+                }
+                return Lista;
+            }
+            catch (Exception ex) 
+            {
+                
+                throw ex;
+            }
         }
     }
 }

@@ -12,12 +12,12 @@ namespace Business
     {
         private ProductoService productoService = new ProductoService();
 
-    
+
         public List<EProducto> GetAll()
         {
             var lista = new List<EProducto>();
             try
-            {                
+            {
                 lista = productoService.GetAll();
             }
             catch (Exception ex)
@@ -45,15 +45,31 @@ namespace Business
         {
             try
             {
-               return productoService.GetByID(ID);
+                return productoService.GetByID(ID);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
-       
+
         }
+
+        public List<EProducto> GetByFilter(string filter, string busqueda)
+        {
+            try
+            {
+                var list = new List<EProducto>();
+                list = productoService.GetByFilter(filter, busqueda);
+                return list;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
 
     }
 

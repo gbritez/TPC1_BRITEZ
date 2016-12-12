@@ -39,5 +39,20 @@ namespace Business
                 throw ex;
             } 
         }
+
+        public List<EProveedor> GetByFilter(string filter, string busqueda)
+        {
+            try
+            {
+                var List = new List<EProveedor>();
+                List = service.GetByFilter(filter, busqueda);
+                return List;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

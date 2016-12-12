@@ -25,13 +25,12 @@ namespace TPC1_BRITEZ
         private void btnEntrar_Click(object sender, EventArgs e)
         {
   
-            var Usuario = new EUsuario();
             var menu = new MainMenu();
-            Usuario.user = txtUser.Text.Trim();
-            Usuario.password = txtPassword.Text.Trim();
+            EUsuario.user = txtUser.Text.Trim();
+            EUsuario.password = txtPassword.Text.Trim();
             try
             {
-                if(loginBusiness.Login(Usuario))
+                if(loginBusiness.Login())
                 {
                     menu.Show();
                     this.Hide();

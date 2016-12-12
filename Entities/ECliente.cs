@@ -13,7 +13,7 @@ namespace Entities
         private long _cuil;
         private long _dni;
         private string _domicilio;
-        private long _telefono;
+        private string _telefono;
 
         #region Propiedades
         public int ID
@@ -76,7 +76,7 @@ namespace Entities
             }
         }
 
-        public long Telefono
+        public string Telefono
         {
             get
             {

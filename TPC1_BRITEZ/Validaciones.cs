@@ -32,7 +32,7 @@ namespace TPC1_BRITEZ
                 CheckIfEmpty(text, name);
                 Regex regex = new Regex(@"[^a-zA-Z]");
                 Match match = regex.Match(text);
-                if (match.Success)
+                if (!match.Success)
                 {
                     throw new Exception("Caracter inválido, sólo se admiten números en el campo " + name);
                 }

@@ -65,10 +65,7 @@
             this.metroGrid2 = new MetroFramework.Controls.MetroGrid();
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.metroGrid3 = new MetroFramework.Controls.MetroGrid();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.lblSaldo = new MetroFramework.Controls.MetroLabel();
             this.Tooltip = new MetroFramework.Components.MetroToolTip();
-            this.btnCaja = new System.Windows.Forms.Button();
             this.btnVolver = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -316,7 +313,7 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.Location = new System.Drawing.Point(378, 96);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(75, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(74, 19);
             this.metroLabel6.TabIndex = 7;
             this.metroLabel6.Text = "Proveedor:";
             // 
@@ -604,41 +601,11 @@
             this.metroGrid3.Size = new System.Drawing.Size(611, 280);
             this.metroGrid3.TabIndex = 3;
             // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(500, 30);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(16, 19);
-            this.metroLabel7.TabIndex = 8;
-            this.metroLabel7.Text = "$";
-            // 
-            // lblSaldo
-            // 
-            this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Location = new System.Drawing.Point(522, 30);
-            this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(16, 19);
-            this.lblSaldo.TabIndex = 10;
-            this.lblSaldo.Text = "0";
-            // 
             // Tooltip
             // 
             this.Tooltip.Style = MetroFramework.MetroColorStyle.Blue;
             this.Tooltip.StyleManager = null;
             this.Tooltip.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // btnCaja
-            // 
-            this.btnCaja.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCaja.BackgroundImage")));
-            this.btnCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCaja.Location = new System.Drawing.Point(452, 26);
-            this.btnCaja.Name = "btnCaja";
-            this.btnCaja.Size = new System.Drawing.Size(32, 23);
-            this.btnCaja.TabIndex = 12;
-            this.Tooltip.SetToolTip(this.btnCaja, "Abrir Caja");
-            this.btnCaja.UseVisualStyleBackColor = true;
-            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
             // 
             // btnVolver
             // 
@@ -657,10 +624,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 579);
-            this.Controls.Add(this.btnCaja);
-            this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.metroTabControl1);
             this.Name = "Caja";
             this.Text = "Caja";
@@ -677,7 +641,6 @@
             this.metroTabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid3)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -704,11 +667,8 @@
         private MetroFramework.Controls.MetroTextBox txtTipo;
         private MetroFramework.Controls.MetroTextBox txtId;
         private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroButton btnAceptarVenta;
         private MetroFramework.Controls.MetroButton btnVolver;
-        private MetroFramework.Controls.MetroLabel lblSaldo;
-        private System.Windows.Forms.Button btnCaja;
         private MetroFramework.Components.MetroToolTip Tooltip;
         private MetroFramework.Controls.MetroGrid VentasGrid;
         private MetroFramework.Controls.MetroGrid metroGrid2;

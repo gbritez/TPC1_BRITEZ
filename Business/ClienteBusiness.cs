@@ -18,7 +18,7 @@ namespace Business
             {
                 return service.GetAll();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -30,11 +30,27 @@ namespace Business
             {
                 service.Insert(cliente);
             }
-            catch ( Exception ex)
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public List<ECliente> GetByFilter (string filter , string busqueda)
+        {
+            try
+            {
+                var Lista = service.GetByFilter(filter, busqueda);
+                return Lista;
+                                
+            }
+            catch (Exception ex)
             {
 
                 throw ex;
             }
         }
     }
-}
+
+    }

@@ -19,17 +19,12 @@ namespace Business
         /// </summary>
         /// <param name="producto"></param>
         /// <param name="ban"></param>
-        public void Transaccion(List<EProducto> Producto, bool ban, decimal saldo)
+        public void Transaccion(List<EProducto> Producto, bool ban)
         {
             var Total = getTotal(Producto, ban);
             try
             {
-                
-                //Si es una compra, valido tener saldo.
-                if (ban && Total > saldo)
-                {
-                    throw new Exception("No posee saldo suficiente para realizar esta transacción.");
-                }
+
                 //Si es una compra checkeo si el producto ya existe y hago un Update
                 if (prodService.CheckIfExists(Producto.First().id))
                 {
@@ -77,33 +72,6 @@ namespace Business
                 throw ex;
             }
 
-        }
-
-        public decimal GetSaldo()
-        {
-            try
-            {
-                return cajaService.Get();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
-        }
-
-        public void SetSaldo(decimal importe)
-        {
-            try
-            {
-                cajaService.SetSaldoInicial(importe);
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
         }
 
         public List<EHistorico> GetHistorico(string tabla)

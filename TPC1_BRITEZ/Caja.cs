@@ -19,7 +19,6 @@ namespace TPC1_BRITEZ
         private CajaBusiness business = new CajaBusiness();
         private ProveedorBusiness provBusiness = new ProveedorBusiness();
         private ProductoBusiness prodBusiness = new ProductoBusiness();
-        private SetCaja setCaja = new SetCaja();
         private EProducto productoVenta = new EProducto();
         private List<EProducto> ventaList = new List<EProducto>();
         private Validaciones validacion = new Validaciones();
@@ -67,7 +66,7 @@ namespace TPC1_BRITEZ
             {
                 ValidarCompra();
                 MapCompra();
-                business.Transaccion(compraList, true, Convert.ToDecimal(lblSaldo.Text));
+                business.Transaccion(compraList, true);
 
                 MetroMessageBox.Show(Owner, "Compra realizada con éxito.");
 
@@ -86,7 +85,6 @@ namespace TPC1_BRITEZ
                 cmbProveedor.DataSource = provBusiness.getAll();
                 cmbProveedor.DisplayMember = "Nombre";
                 cmbProveedor.ValueMember = "ID";
-                lblSaldo.Text = business.GetSaldo().ToString();
                 metroGrid2.DataSource = business.GetHistorico("COMPRA_HISTORICO");
                 metroGrid3.DataSource = business.GetHistorico("VENTA_HISTORICO");
                 FormatGridHistorico(metroGrid2);
@@ -106,7 +104,7 @@ namespace TPC1_BRITEZ
             try
             {
 
-                business.Transaccion(ventaList, false, Convert.ToDecimal(lblSaldo.Text));
+                business.Transaccion(ventaList, false);
                 ventaList.Clear();
                 VentasGrid.DataSource = prodBusiness.GetAll();
                 MetroMessageBox.Show(Owner, "Venta realizada con éxito.");
@@ -129,10 +127,6 @@ namespace TPC1_BRITEZ
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnCaja_Click(object sender, EventArgs e)
-        {
-            setCaja.ShowDialog();
-        }
 
         private void carroBtn_Click(object sender, EventArgs e)
         {
