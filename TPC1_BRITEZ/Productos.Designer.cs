@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTipo = new MetroFramework.Controls.MetroTextBox();
             this.txtMarca = new MetroFramework.Controls.MetroTextBox();
             this.txtPrecio = new MetroFramework.Controls.MetroTextBox();
             this.txtStock = new MetroFramework.Controls.MetroTextBox();
@@ -40,6 +39,7 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.cmbProveedor = new MetroFramework.Controls.MetroComboBox();
+            this.cmbTipo = new MetroFramework.Controls.MetroComboBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -75,6 +75,7 @@
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.cmbTipo);
             this.metroTabPage2.Controls.Add(this.cmbProveedor);
             this.metroTabPage2.Controls.Add(this.metroLabel6);
             this.metroTabPage2.Controls.Add(this.metroLabel5);
@@ -86,12 +87,10 @@
             this.metroTabPage2.Controls.Add(this.txtStock);
             this.metroTabPage2.Controls.Add(this.txtPrecio);
             this.metroTabPage2.Controls.Add(this.txtMarca);
-            this.metroTabPage2.Controls.Add(this.txtTipo);
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Size = new System.Drawing.Size(746, 479);
             this.metroTabPage2.Controls.SetChildIndex(this.btnLimpiar, 0);
             this.metroTabPage2.Controls.SetChildIndex(this.btnAceptar, 0);
-            this.metroTabPage2.Controls.SetChildIndex(this.txtTipo, 0);
             this.metroTabPage2.Controls.SetChildIndex(this.txtMarca, 0);
             this.metroTabPage2.Controls.SetChildIndex(this.txtPrecio, 0);
             this.metroTabPage2.Controls.SetChildIndex(this.txtStock, 0);
@@ -103,45 +102,19 @@
             this.metroTabPage2.Controls.SetChildIndex(this.metroLabel5, 0);
             this.metroTabPage2.Controls.SetChildIndex(this.metroLabel6, 0);
             this.metroTabPage2.Controls.SetChildIndex(this.cmbProveedor, 0);
+            this.metroTabPage2.Controls.SetChildIndex(this.cmbTipo, 0);
             // 
             // btnAceptar
             // 
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // btnVolver
             // 
             this.btnVolver.Location = new System.Drawing.Point(722, 581);
-            // 
-            // txtTipo
-            // 
-            this.txtTipo.AccessibleName = "Tipo";
-            // 
-            // 
-            // 
-            this.txtTipo.CustomButton.Image = null;
-            this.txtTipo.CustomButton.Location = new System.Drawing.Point(89, 1);
-            this.txtTipo.CustomButton.Name = "";
-            this.txtTipo.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtTipo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtTipo.CustomButton.TabIndex = 1;
-            this.txtTipo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtTipo.CustomButton.UseSelectable = true;
-            this.txtTipo.CustomButton.Visible = false;
-            this.txtTipo.Lines = new string[0];
-            this.txtTipo.Location = new System.Drawing.Point(131, 39);
-            this.txtTipo.MaxLength = 32767;
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.PasswordChar = '\0';
-            this.txtTipo.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtTipo.SelectedText = "";
-            this.txtTipo.SelectionLength = 0;
-            this.txtTipo.SelectionStart = 0;
-            this.txtTipo.ShortcutsEnabled = true;
-            this.txtTipo.Size = new System.Drawing.Size(111, 23);
-            this.txtTipo.TabIndex = 4;
-            this.txtTipo.UseSelectable = true;
-            this.txtTipo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtTipo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtMarca
             // 
@@ -270,7 +243,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(14, 43);
+            this.metroLabel1.Location = new System.Drawing.Point(14, 39);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(38, 19);
             this.metroLabel1.TabIndex = 11;
@@ -331,6 +304,16 @@
             this.cmbProveedor.TabIndex = 17;
             this.cmbProveedor.UseSelectable = true;
             // 
+            // cmbTipo
+            // 
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.ItemHeight = 23;
+            this.cmbTipo.Location = new System.Drawing.Point(131, 33);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(121, 29);
+            this.cmbTipo.TabIndex = 18;
+            this.cmbTipo.UseSelectable = true;
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,7 +343,7 @@
         private MetroFramework.Controls.MetroTextBox txtStock;
         private MetroFramework.Controls.MetroTextBox txtPrecio;
         private MetroFramework.Controls.MetroTextBox txtMarca;
-        private MetroFramework.Controls.MetroTextBox txtTipo;
         private MetroFramework.Controls.MetroComboBox cmbProveedor;
+        private MetroFramework.Controls.MetroComboBox cmbTipo;
     }
 }

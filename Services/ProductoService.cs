@@ -261,5 +261,37 @@ namespace Services
                 throw ex;
             }
         }
+
+        public List<ETipos> GetTipos()
+        {
+            var query = "SELECT * FROM TIPOS";
+            var list = new List<ETipos>();
+            
+            try
+            {
+                using (SqlConnection connection = new SqlConnection (cnx))
+                {
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            var tipo = new ETipos();
+                            tipo.ID = Convert.ToInt16(reader.GetValue(0));
+                            tipo.Descripcion = reader.GetValue(1).ToString();
+                            list.Add(tipo);
+                        }
+                    }
+                }
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

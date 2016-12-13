@@ -37,13 +37,13 @@ namespace Business
             }
         }
 
-        public List<ECliente> GetByFilter (string filter , string busqueda)
+        public List<ECliente> GetByFilter(string filter, string busqueda)
         {
             try
             {
                 var Lista = service.GetByFilter(filter, busqueda);
                 return Lista;
-                                
+
             }
             catch (Exception ex)
             {
@@ -51,6 +51,7 @@ namespace Business
                 throw ex;
             }
         }
-    }
 
     }
+
+}

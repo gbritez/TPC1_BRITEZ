@@ -18,3 +18,8 @@ C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Entities\bin\Debug\Entities.pdb
 C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
 C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Entities\obj\Debug\Entities.dll
 C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Entities\obj\Debug\Entities.pdb
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ3\Entities\bin\Debug\Entities.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ3\Entities\bin\Debug\Entities.pdb
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ3\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ3\Entities\obj\Debug\Entities.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ3\Entities\obj\Debug\Entities.pdb

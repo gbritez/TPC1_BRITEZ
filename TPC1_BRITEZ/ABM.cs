@@ -36,5 +36,7 @@ namespace TPC1_BRITEZ
         {
             this.Close();
         }
+
+
     }
 }

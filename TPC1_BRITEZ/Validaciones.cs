@@ -30,9 +30,9 @@ namespace TPC1_BRITEZ
             try
             {
                 CheckIfEmpty(text, name);
-                Regex regex = new Regex(@"[^a-zA-Z]");
+                Regex regex = new Regex(@"[a-zA-Z]");
                 Match match = regex.Match(text);
-                if (!match.Success)
+                if (match.Success)
                 {
                     throw new Exception("Caracter inválido, sólo se admiten números en el campo " + name);
                 }
@@ -48,9 +48,9 @@ namespace TPC1_BRITEZ
             try
             {
                 CheckIfEmpty(text, name);
-                Regex regex = new Regex(@"[^0-9]");
+                Regex regex = new Regex(@"[0-9]");
                 Match match = regex.Match(text);
-                if (!match.Success)
+                if (match.Success)
                 {
                     throw new Exception("Caracter inválido, sólo se admiten letras en el campo " + name);
                 }
