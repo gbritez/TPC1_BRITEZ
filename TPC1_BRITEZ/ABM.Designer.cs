@@ -260,7 +260,7 @@
         }
 
         #endregion
-
+        
         protected MetroFramework.Controls.MetroTabControl metroTabControl1;
         protected MetroFramework.Controls.MetroTabPage metroTabPage1;
         protected System.Windows.Forms.GroupBox groupBox1;

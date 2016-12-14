@@ -22,7 +22,7 @@ namespace TPC1_BRITEZ
         private EProducto producto = new EProducto();
         protected void Validar()
         {
-            validacion.ValidateText(txtTipo.Text, txtTipo.AccessibleName);
+            validacion.ValidateText(cmbTipo.Text, cmbTipo.AccessibleName);
             validacion.ValidateText(txtMarca.Text, txtMarca.AccessibleName);
             validacion.ValidateNumbers(txtPrecio.Text, txtPrecio.AccessibleName);
             validacion.ValidateNumbers(txtStock.Text,txtStock.AccessibleName);
@@ -30,7 +30,7 @@ namespace TPC1_BRITEZ
         }
         private void Map()
         {
-            producto.tipo = txtTipo.Text;
+            producto.tipo = cmbTipo.Text;
             producto.marca = txtMarca.Text;
             producto.precio = Convert.ToDecimal(txtPrecio.Text);
             producto.precioUnitario = Convert.ToDecimal(txtPrecio.Text);
@@ -53,6 +53,8 @@ namespace TPC1_BRITEZ
         }
         private void cargarCombo()
         {
+            cmbTipo.DataSource = business.GetTipos();
+            cmbTipo.DisplayMember = "Descripcion";
             cmbFiltro.Items.Add("MARCA");
             cmbFiltro.Items.Add("TIPO");
             cmbFiltro.Items.Add("PRECIO");
@@ -122,6 +124,14 @@ namespace TPC1_BRITEZ
 
                 MetroMessageBox.Show(Owner, ex.Message, "Error");
             }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtMarca.Text = "";
+            txtPrecio.Text = "";
+            txtStock.Text = "";
+            txtStockMin.Text = "";
         }
     }
 }

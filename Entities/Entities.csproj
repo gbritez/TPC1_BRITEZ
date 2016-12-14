@@ -45,6 +45,7 @@
     <Compile Include="EHistorico.cs" />
     <Compile Include="EProducto.cs" />
     <Compile Include="EProveedor.cs" />
+    <Compile Include="ETipos.cs" />
     <Compile Include="EUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -26,3 +26,10 @@ C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Services\bin\Debug\Entities.pdb
 C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
 C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Services\obj\Debug\Services.dll
 C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ2\Services\obj\Debug\Services.pdb
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ3\Services\bin\Debug\Services.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ3\Services\bin\Debug\Services.pdb
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ3\Services\bin\Debug\Entities.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ3\Services\bin\Debug\Entities.pdb
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ3\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ3\Services\obj\Debug\Services.dll
+C:\Repositorios\Fuentes\GitRepos\TPC1_BRITEZ3\Services\obj\Debug\Services.pdb

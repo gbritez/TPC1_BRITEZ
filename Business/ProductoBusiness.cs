@@ -70,6 +70,19 @@ namespace Business
             }
         }
 
+        public List<ETipos> GetTipos()
+        {
+            try
+            {
+                var Lista = new List<ETipos>();
+                Lista = productoService.GetTipos();
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
     }
 
